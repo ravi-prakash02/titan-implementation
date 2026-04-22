@@ -1,0 +1,18 @@
+for titan:
+
+taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
+cargo test titan_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
+> titan.csv
+
+
+grep '^[0-9]' titan.csv > titan_clean.csv
+
+python titan_plot.py
+
+for dory: 
+
+taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
+cargo test dory_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
+> dory.csv
+
+grep '^[0-9]' dory.csv > dory_clean.csv
