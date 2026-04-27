@@ -28,6 +28,15 @@ All experiments are executed under strict conditions to ensure fair comparison:
 
 The benchmarking commands use `taskset`, which is **only available on Linux systems** (via `util-linux`).
 
+On unsupported platforms, you can still run the benchmarks by **removing `taskset -c 0`**, but results may be less consistent due to OS scheduling across multiple CPU cores.
+
+Example (macOS / Windows alternative):
+
+```bash
+RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
+cargo test titan_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
+| grep '^[0-9]' > titan_clean.csv
+```
 ---
 
 ## Running Experiments
@@ -57,10 +66,17 @@ cargo test dory_scaling_experiment --release -- --ignored --nocapture --test-thr
 ```
 
 ---
+### Other Schemes (Baselines)
+
+Benchmarks for other schemes (Brakedown, Hyrax, Kopis, Whir) have already been included in the repository.
+
+To reproduce their results, run their corresponding scaling experiments using the **same command structure and environment settings** as above (i.e., single-core execution, disabled parallelism).
+
+---
 
 ## Output Format
 
-The cleaned CSV files (`*_clean.csv`) contain numeric benchmark results. Each row follows:
+The cleaned CSV files (`*_clean.csv`) contain numeric benchmark results. Each row contains:
 
 ```text
 input_size, commit_time, eval_time, verify_time, proof_size
