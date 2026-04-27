@@ -56,28 +56,17 @@ python titan_plot.py
 ```
 
 ---
-
-### Dory (Baseline)
-
-```bash
-taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
-cargo test dory_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
-| grep '^[0-9]' > dory_clean.csv
-```
-
----
 ### Other Schemes (Baselines)
 
 Benchmarks for other schemes (Brakedown, Hyrax, Kopis, Whir) have already been included in the repository.
 
 To reproduce their results, run their corresponding scaling experiments using the **same command structure and environment settings** as above (i.e., single-core execution, disabled parallelism).
 
-**Whir-specific note:**
-
-- Clone the Whir repository: https://github.com/WizardOfMenlo/whir  
-- Copy the `whirpcs.sh` script from this repository into the cloned Whir repository  
-- Run the script inside the Whir repository  
-
+- **Brakedown & Hyrax:** Benchmarks were obtained by modifying the [`poly-commit`](https://github.com/arkworks-rs/poly-commit) repository.  
+- **Whir:**
+  - Clone the repository: https://github.com/WizardOfMenlo/whir  
+  - Copy the `whirpcs.sh` script from this repository into the cloned repository  
+  - Run the script inside the Whir repository 
 ---
 
 ## Output Format
