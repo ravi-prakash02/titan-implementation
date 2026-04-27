@@ -72,6 +72,12 @@ Benchmarks for other schemes (Brakedown, Hyrax, Kopis, Whir) have already been i
 
 To reproduce their results, run their corresponding scaling experiments using the **same command structure and environment settings** as above (i.e., single-core execution, disabled parallelism).
 
+**Whir-specific note:**
+
+- Clone the Whir repository: https://github.com/WizardOfMenlo/whir  
+- Copy the `whirpcs.sh` script from this repository into the cloned Whir repository  
+- Run the script inside the Whir repository  
+
 ---
 
 ## Output Format
