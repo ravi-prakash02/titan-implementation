@@ -1,0 +1,309 @@
+
+poly-commit is the repository containing Brakedown and Hyrax: https://github.com/arkworks-rs/poly-commit
+We need to modify a few things: 
+1: add these to poly-commit/cargo.toml as dependencies: rand_chacha = "0.3", ark-bls12-381 = "0.5", ark-bls12-377 = "0.5"
+2: comment out `#![deny(unused_imports)]` in poly-commit/lib.rs line 8
+3: comment out all the `#[cfg(test)]` lines in poly-commit/src/utils.rs and poly-commit/src/linear_codes/utils.rs
+
+To run Hyrax, copy and paste this below script in poly-commit/src/hyrax/tests.rs:
+
+use std::time::Instant;
+use ark_serialize::CanonicalSerialize;
+fn run_hyrax_once(n: usize) -> (u128, u128, u128, usize) {
+
+    let chacha = &mut ChaCha20Rng::from_rng(test_rng()).unwrap();
+
+    let pp = Hyrax381::setup(1, Some(n), chacha).unwrap();
+
+    let (ck, vk) = Hyrax381::trim(&pp, 1, 1, None).unwrap();
+
+    let l_poly = LabeledPolynomial::new(
+        "test_poly".to_string(),
+        rand_poly::<Fr>(0, Some(n), chacha),
+        None,
+        None,
+    );
+
+    let start_commit = Instant::now();
+    let (c, rands) = Hyrax381::commit(&ck, &[l_poly.clone()], Some(chacha)).unwrap();
+    let commit_ms = start_commit.elapsed().as_millis();
+
+    let point: Vec<Fr> = rand_point(Some(n), chacha);
+    let value = l_poly.evaluate(&point);
+
+    // Dummy argument
+    let mut test_sponge = test_sponge::<Fr>();
+
+    let start_prover = Instant::now();
+    let proof = Hyrax381::open(
+        &ck,
+        &[l_poly],
+        &c,
+        &point,
+        &mut (test_sponge.clone()),
+        &rands,
+        Some(chacha),
+    )
+    .unwrap();
+    let prover_ms = start_prover.elapsed().as_millis();
+
+    //verify
+    let start_verify = Instant::now();
+    assert!(Hyrax381::check(
+        &vk,
+        &c,
+        &point,
+        [value],
+        &proof,
+        &mut test_sponge,
+        Some(chacha),
+    )
+    .unwrap());
+    let verifier_ms = start_verify.elapsed().as_millis();
+
+    // proof size
+    let mut proof_bytes = Vec::new();
+    proof.serialize_compressed(&mut proof_bytes).unwrap();
+    let proof_size = proof_bytes.len();
+
+    // let g1_elems = n;
+    // // BLS12-381 compressed G1 size
+    // let g1_bytes = 48;
+    // let proof_size = g1_elems * g1_bytes;
+
+
+
+
+    (commit_ms, prover_ms, verifier_ms, proof_size)
+}
+
+// ****************** tests ******************
+#[test]
+#[ignore]
+fn hyrax_scaling_experiment() {
+    println!("log_n,commit_ms,prover_ms,verifier_ms,proof_bytes");
+    let runs = 5;
+
+    for log_n in (18..=26).step_by(2) {
+        let mut commit_sum = 0u128;
+        let mut prover_sum = 0u128;
+        let mut verifier_sum = 0u128;
+        let mut proof_size = 0;
+
+        for _ in 0..runs {
+            let (c, p, v, pb) = run_hyrax_once(log_n);
+            commit_sum += c;
+            prover_sum += p;
+            verifier_sum += v;
+            proof_size += pb
+        }
+
+        let commit_avg = commit_sum / runs;
+        let prover_avg = prover_sum / runs;
+        let verifier_avg = verifier_sum / runs;
+        let proof_bytes = proof_size / runs as usize;
+
+        println!(
+            "{},{},{},{},{}",
+            log_n, commit_avg, prover_avg, verifier_avg, proof_bytes
+        );
+    }
+}  
+ 
+
+ To run Brakedown benchmark, copy and paste the below script in poly-commit/src/linear_codes/multilinear_brakedown/tests.rs (before mod tests{}): 
+
+use crate::linear_codes::LinearCodePCS;
+use crate::utils::test_sponge;
+use crate::{
+    linear_codes::{BrakedownPCParams, MultilinearBrakedown, PolynomialCommitment},
+    LabeledPolynomial,
+};
+use crate::linear_codes::utils::{
+    LeafIdentityHasher,
+    FieldToBytesColHasher,
+};
+
+use ark_bls12_381::Fr;
+use ark_crypto_primitives::{
+    crh::{sha256::Sha256, CRHScheme, TwoToOneCRHScheme},
+    merkle_tree::{ByteDigestConverter, Config},
+};
+use ark_ff::{Field, PrimeField};
+use ark_poly::evaluations::multivariate::SparseMultilinearExtension;
+use ark_std::test_rng;
+use blake2::Blake2s256;
+use rand_chacha::{rand_core::SeedableRng, ChaCha20Rng};
+use std::time::Instant;
+use ark_poly::MultilinearExtension;
+use ark_poly::Polynomial;
+//use ark_poly::evaluations::multivariate::SparseMultilinearExtension;
+use ark_serialize::CanonicalSerialize;
+
+type LeafH = LeafIdentityHasher;
+    type CompressH = Sha256;
+    type ColHasher<F, D> = FieldToBytesColHasher<F, D>;
+
+    struct MerkleTreeParams;
+
+    impl Config for MerkleTreeParams {
+        type Leaf = Vec<u8>;
+
+        type LeafDigest = <LeafH as CRHScheme>::Output;
+        type LeafInnerDigestConverter = ByteDigestConverter<Self::LeafDigest>;
+        type InnerDigest = <CompressH as TwoToOneCRHScheme>::Output;
+
+        type LeafHash = LeafH;
+        type TwoToOneHash = CompressH;
+    }
+
+    type MTConfig = MerkleTreeParams;
+
+    type BrakedownPCS<F> = LinearCodePCS<
+        MultilinearBrakedown<F, MTConfig, SparseMultilinearExtension<F>, ColHasher<F, Blake2s256>>,
+        F,
+        SparseMultilinearExtension<F>,
+        MTConfig,
+        ColHasher<F, Blake2s256>,
+    >;
+
+fn rand_poly<Fr: PrimeField>(
+        _: usize,
+        num_vars: Option<usize>,
+        rng: &mut ChaCha20Rng,
+    ) -> SparseMultilinearExtension<Fr> {
+        match num_vars {
+            Some(n) => SparseMultilinearExtension::rand(n, rng),
+            None => unimplemented!(), // should not happen in ML case!
+        }
+    }
+
+fn rand_point<F: Field>(num_vars: Option<usize>, rng: &mut ChaCha20Rng) -> Vec<F> {
+        match num_vars {
+            Some(n) => (0..n).map(|_| F::rand(rng)).collect(),
+            None => unimplemented!(), // should not happen!
+        }
+    }
+
+fn run_brakedown_once(log_n: usize) -> (u128, u128, u128, usize) {
+    use ark_crypto_primitives::crh::{CRHScheme, TwoToOneCRHScheme};
+
+    let n = 1 << log_n;
+    let mut rng = test_rng();
+
+    // === setup parameters ===
+    let leaf_hash_param = <LeafH as CRHScheme>::setup(&mut rng).unwrap();
+    let two_to_one_hash_param =
+        <CompressH as TwoToOneCRHScheme>::setup(&mut rng).unwrap();
+    let col_hash_params =
+        <ColHasher<Fr, Blake2s256> as CRHScheme>::setup(&mut rng).unwrap();
+
+    let pp: BrakedownPCParams<Fr, MTConfig, ColHasher<Fr, Blake2s256>> =
+        BrakedownPCParams::default(
+            &mut rng,
+            n,
+            true,
+            leaf_hash_param,
+            two_to_one_hash_param,
+            col_hash_params,
+        );
+
+    let (ck, vk) = BrakedownPCS::<Fr>::trim(&pp, 0, 0, None).unwrap();
+
+    // === random multilinear polynomial ===
+    let mut chacha = ChaCha20Rng::from_rng(test_rng()).unwrap();
+    let poly = rand_poly::<Fr>(0, Some(log_n), &mut chacha);
+
+    let labeled_poly = LabeledPolynomial::new(
+        "poly".to_string(),
+        poly.clone(),
+        Some(log_n),
+        Some(log_n),
+    );
+
+    //commit
+    let start_commit = Instant::now();
+
+    let (commitment, states) =
+        BrakedownPCS::<Fr>::commit(&ck, &[labeled_poly.clone()], None).unwrap();
+    
+    let commit_ms = start_commit.elapsed().as_millis();
+
+    let point = rand_point::<Fr>(Some(log_n), &mut chacha);
+    let value = poly.evaluate(&point);
+    let mut sponge = test_sponge::<Fr>();
+
+    let start_prove = Instant::now();
+    let proof = BrakedownPCS::<Fr>::open(
+        &ck,
+        &[labeled_poly],
+        &commitment,
+        &point,
+        &mut (sponge.clone()),
+        &states,
+        None,
+    )
+    .unwrap();
+
+    let prove_ms = start_prove.elapsed().as_millis();
+
+    // === verify ===
+    let start_verify = Instant::now();
+    BrakedownPCS::<Fr>::check(
+        &vk,
+        &commitment,
+        &point,
+        [value],
+        &proof,
+        &mut sponge,
+        None,
+    )
+    .unwrap();
+    let verifier_ms = start_verify.elapsed().as_millis();
+
+    //proof size
+
+    let mut proof_bytes = Vec::new();
+    proof.serialize_compressed(&mut proof_bytes).unwrap();
+    let proof_size = proof_bytes.len();
+    // let proof_elements = 1 << (log_n / 2);
+    // let proof_size = proof_elements * 1000;
+
+
+    (commit_ms, prove_ms, verifier_ms, proof_size)
+}
+
+add this inside mod tests{}, and remove all other tests: 
+
+ use super::*;
+    #[test]
+    #[ignore]
+    fn brakedown_scaling_experiment() {
+        println!("log_n,commit_ms,prover_ms,verifier_ms,proof_bytes");
+        let runs = 1;
+
+        for log_n in (18..=26).step_by(2) {
+            let mut commit_sum = 0u128;
+            let mut prover_sum = 0u128;
+            let mut verifier_sum = 0u128;
+            let mut proof_size = 0;
+
+            for _ in 0..runs {
+                let (c, p, v, pb) = run_brakedown_once(log_n);
+                commit_sum += c;
+                prover_sum += p;
+                verifier_sum += v;
+                proof_size += pb
+            }
+
+            let commit_avg = commit_sum / runs;
+            let prover_avg = prover_sum / runs;
+            let verifier_avg = verifier_sum / runs;
+            let proof_bytes = proof_size / runs as usize;
+
+            println!(
+                "{},{},{},{},{}",
+                log_n, commit_avg, prover_avg, verifier_avg, proof_bytes
+            );
+        }
+    }   

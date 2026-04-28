@@ -58,11 +58,11 @@ python titan_plot.py
 ---
 ### Other Schemes (Baselines)
 
-Benchmarks for other schemes (Brakedown, Hyrax, Kopis, Whir) have already been included in the repository.
+Benchmarks for other schemes (Brakedown, Dory, Hyrax, Kopis, Whir) have already been included in the repository.
 
 To reproduce their results, run their corresponding scaling experiments using the **same command structure and environment settings** as above (i.e., single-core execution, disabled parallelism).
 
-- **Brakedown & Hyrax:** Benchmarks were obtained by modifying the [`poly-commit`](https://github.com/arkworks-rs/poly-commit) repository.  
+- **Brakedown & Hyrax:** Benchmarks were obtained by modifying the [`poly-commit`](https://github.com/arkworks-rs/poly-commit) repository. Follow the instructions `in brakedown_hyrax_benchmarking_steps.txt` file to reproduce the results.
 - **Whir:**
   - Clone the repository: https://github.com/WizardOfMenlo/whir  
   - Copy the `whirpcs.sh` script from this repository into the cloned repository  
