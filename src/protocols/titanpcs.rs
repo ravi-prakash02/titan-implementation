@@ -777,9 +777,9 @@ fn titan_config_for_m(m: usize) -> TitanSetupConfig {
             m1: 8,
             l1: 1,
             domain_g1_size: 11,
-            num_queries: 64,
+            num_queries: 70,
             l2: 5,
-            domain_g2_size: 10,
+            domain_g2_size: 9,
             num_merkle_nodes: 0,
         },
         20 => TitanSetupConfig {
@@ -787,9 +787,9 @@ fn titan_config_for_m(m: usize) -> TitanSetupConfig {
             m1: 8,
             l1: 1,
             domain_g1_size: 11,
-            num_queries: 64,
+            num_queries: 70,
             l2: 5,
-            domain_g2_size: 12,
+            domain_g2_size: 11,
             num_merkle_nodes: 0,
         },
         22 => TitanSetupConfig {
@@ -797,9 +797,9 @@ fn titan_config_for_m(m: usize) -> TitanSetupConfig {
             m1: 9,
             l1: 2,
             domain_g1_size: 11,
-            num_queries: 64,
+            num_queries: 70,
             l2: 5,
-            domain_g2_size: 13,
+            domain_g2_size: 12,
             num_merkle_nodes: 0,
         },
         24 => TitanSetupConfig {
@@ -807,9 +807,9 @@ fn titan_config_for_m(m: usize) -> TitanSetupConfig {
             m1: 10,
             l1: 2,
             domain_g1_size: 12,
-            num_queries: 64,
+            num_queries: 70,
             l2: 6,
-            domain_g2_size: 13,
+            domain_g2_size: 12,
             num_merkle_nodes: 0,
         },
         26 => TitanSetupConfig {
@@ -817,9 +817,9 @@ fn titan_config_for_m(m: usize) -> TitanSetupConfig {
             m1: 11,
             l1: 3,
             domain_g1_size: 12,
-            num_queries: 64,
+            num_queries: 70,
             l2: 7,
-            domain_g2_size: 13,
+            domain_g2_size: 12,
             num_merkle_nodes: 0,
         },
         _ => panic!("Unsupported Titan parameter m = {}", m),
@@ -1110,7 +1110,7 @@ mod tests {
         let mut results = Vec::new();
 
         for m in (18..=26).step_by(2) {
-            let runs = 5;
+            let runs = 2;
             let mut c_sum: u128 = 0;
             let mut p_sum: u128 = 0;
             let mut v_sum: u128 = 0;

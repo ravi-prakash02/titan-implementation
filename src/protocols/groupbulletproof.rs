@@ -331,7 +331,7 @@ where
         }
 
         // get opening challenges
-        let num_queries = 25usize;
+        let num_queries = 35usize;
         let y_vec: Vec<usize> = (0usize..num_queries)
             .into_iter()
             .map(|_| {
