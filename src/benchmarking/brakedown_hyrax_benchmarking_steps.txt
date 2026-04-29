@@ -1,6 +1,6 @@
 
-poly-commit is the repository containing Brakedown and Hyrax: https://github.com/arkworks-rs/poly-commit
-We need to modify a few things: 
+poly-commit is the repository containing Brakedown and Hyrax: https://github.com/arkworks-rs/poly-commit. Clone the poly-commit repository.
+We need to modify a few things in the cloned repository: 
 1: add these to poly-commit/cargo.toml as dependencies: rand_chacha = "0.3", ark-bls12-381 = "0.5", ark-bls12-377 = "0.5"
 2: comment out `#![deny(unused_imports)]` in poly-commit/lib.rs line 8
 3: comment out all the `#[cfg(test)]` lines in poly-commit/src/utils.rs and poly-commit/src/linear_codes/utils.rs
