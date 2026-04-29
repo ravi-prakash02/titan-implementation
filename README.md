@@ -10,6 +10,7 @@ The PCS evaluation compares performance across the following metrics:
 - Proof size  
 
 This project also implements TitanSnark, a variant of Spartan PIOP with Titan PCS to obtain a transparent SNARK.
+
 ---
 
 ## Benchmarking Setup
@@ -37,6 +38,7 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 ```
 
 Then follow the on-screen instructions. After installation, restart your shell (or close and reopen your terminal).
+
 ---
 
 ### Verify Installation
