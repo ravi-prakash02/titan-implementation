@@ -155,7 +155,7 @@ This test prints:
 ### Notes
 
 - This test is intended for **functional validation** only and not for strict benchmarking  
-- Parameters (e.g., constraint size, number of queries) can be modified directly in the test code (`test_spartan_titan_index`)  
+- Parameters (e.g., constraint size, number of queries) can be modified directly in the test code (in `src/protocols/spartan_titan.rs`)  
 - No special environment configuration is required  
 
 ---
