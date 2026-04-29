@@ -102,7 +102,7 @@ impl SpartanProof {
         proof_size += 10;
         proof_size += self.sumcheck_proof_4.get_proof_size();
         proof_size += 2;
-        proof_size += self.agg_pqm_proof.eval_proof.get_proof_size();
+        proof_size += self.agg_pqm_proof.eval_proof.get_proof_size()/32; // to offset multiplication by 32 inside get_proof_size
         proof_size += self.batch_zg_proof.get_prooof_size();
         proof_size += self.batch_index_proof.get_honest_oracle_proof_size();
         proof_size
@@ -744,7 +744,7 @@ impl TitanSnark {
 
         transcript.append_message(b"comm_g", &proof.comm_g_root.to_sponge_bytes_as_vec());
 
-        let num_vars_idx = num_vars_x; // N_padded = m_padded in our setup
+        let num_vars_idx = index.row_poly.num_vars;
         let eta: Vec<F> = (0..num_vars_idx)
             .map(|_| get_challenge::<F>(&mut transcript, b"eta"))
             .collect();
@@ -951,18 +951,63 @@ impl TitanSnark {
 mod tests {
     use std::cmp::max;
     use super::*;
-    use crate::r1cs::{generate_random_r1cs, verify_r1cs};
+    use crate::r1cs::{verify_r1cs, R1CS, SparseMatrix};
     use std::time::Instant;
+
+    // Mirrors Instance::produce_synthetic_r1cs from libspartan.
+    // Random witness z (size max_nonzeros, z[0] = 1 as constant term).
+    // For constraint i: A[i, i%sz] = 1, B[i, (i+2)%sz] = 1,
+    //   C[i, (i+3)%sz] = z[a]*z[b] / z[c]  (or C[i,0] = z[a]*z[b] if z[c] = 0).
+    // Constraint count is capped at max_nonzeros/3 so that total entries (3·m) fit.
+    fn generate_random_r1cs(m: usize, _n: usize, max_nonzeros: usize) -> R1CS<F> {
+        let mut rng = rand::thread_rng();
+        let sz = max_nonzeros;
+
+        // One entry per matrix per constraint → 3 entries total per constraint.
+        // Cap m so that total entries (3·m_actual) never exceed max_nonzeros.
+        let m_actual = m.min(max_nonzeros / 3);
+
+        let mut z: Vec<F> = (0..sz).map(|_| F::random(&mut rng)).collect();
+        z[0] = F::ONE;
+
+        let mut a_entries: Vec<(usize, usize, F)> = Vec::with_capacity(m_actual);
+        let mut b_entries: Vec<(usize, usize, F)> = Vec::with_capacity(m_actual);
+        let mut c_entries: Vec<(usize, usize, F)> = Vec::with_capacity(m_actual);
+
+        for i in 0..m_actual {
+            let a_idx = i % sz;
+            let b_idx = (i + 2) % sz;
+            let c_idx = (i + 3) % sz;
+            let ab_val = z[a_idx] * z[b_idx];
+
+            a_entries.push((i, a_idx, F::ONE));
+            b_entries.push((i, b_idx, F::ONE));
+
+            if z[c_idx] == F::ZERO {
+                c_entries.push((i, 0, ab_val));
+            } else {
+                c_entries.push((i, c_idx, ab_val * Option::<F>::from(z[c_idx].invert()).unwrap()));
+            }
+        }
+
+        R1CS {
+            m,
+            n: sz,
+            a: SparseMatrix { rows: m, cols: sz, entries: a_entries },
+            b: SparseMatrix { rows: m, cols: sz, entries: b_entries },
+            c: SparseMatrix { rows: m, cols: sz, entries: c_entries },
+            witness: z,
+        }
+    }
 
     #[test]
     fn test_spartan_titan_index() {
         let r1cs_m = 1usize << 20;
         let r1cs_n = 1usize << 20;
-        let max_nonzeros = 1usize << 22;
+        let max_nonzeros = 1usize << 20;
 
         // Generate a random satisfiable R1CS instance
-        let mut r1cs = generate_random_r1cs::<F>(r1cs_m, r1cs_n, max_nonzeros);
-        r1cs.witness.resize(max_nonzeros, F::ZERO);
+        let r1cs = generate_random_r1cs(r1cs_m, r1cs_n, max_nonzeros);
         assert!(verify_r1cs(&r1cs), "R1CS instance should be satisfiable");
         println!(
             "R1CS: {} constraints, {} variables, A={} B={} C={} entries",

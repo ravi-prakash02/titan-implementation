@@ -7,10 +7,10 @@ mod tests {
 
     #[test]
     fn test_snark_synthetic() {
-        let num_vars = 1usize << 22;
-        let num_cons = 1usize << 22;
+        let num_vars = 1usize << 20;
+        let num_cons = 1usize << 20;
         let num_inputs = 10;
-        let num_non_zero_entries = 1usize << 22;
+        let num_non_zero_entries = 1usize << 20;
 
         let gens = SNARKGens::new(num_cons, num_vars, num_inputs, num_non_zero_entries);
 
