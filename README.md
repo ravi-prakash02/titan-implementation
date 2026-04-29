@@ -110,7 +110,10 @@ To reproduce their results, run their corresponding scaling experiments using th
 - **Whir:**
   - Clone the repository: https://github.com/WizardOfMenlo/whir  
   - Copy the `src/benchmarking/whirpcs.sh` script into the cloned Whir repository  
-  - Run the script inside the Whir repository 
+  -  Navigate to the repository and run:
+  ```bash
+  bash whirpcs.sh
+  
 ---
 
 ## Output Format
