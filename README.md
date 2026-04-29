@@ -17,7 +17,7 @@ This project also implements TitanSnark, a variant of Spartan PIOP with Titan PC
 
 All experiments are executed under strict conditions to ensure fair comparison:
 
-- Single-core execution using `taskset` (Linux only, see the [Platform Compatibility](#platform-compatibility) section for more details.)
+- Single-core execution using `taskset` (Linux only, see the [Platform Compatibility](#platform-compatibility))
 - Parallelism disabled:
   - `RAYON_NUM_THREADS=1`
   - `RUST_TEST_THREADS=1`
@@ -69,10 +69,23 @@ rustup update
 - For benchmarking, Linux is recommended (see [Platform Compatibility](#platform-compatibility))
 
 ---
+## Getting Started
+
+Download the repository as a ZIP file, extract it locally, and navigate into the extracted directory using a terminal (replace with the actual path if needed):
+
+```bash
+cd titan-implementation-BB26
+```
+
+All benchmarking and SNARK commands should be run from the root of this repository.
+
+---
 
 ## Running Experiments
 
 ### Titan PCS
+
+Run:
 
 ```bash
 taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
@@ -96,13 +109,13 @@ To reproduce their results, run their corresponding scaling experiments using th
 - **Brakedown & Hyrax:** Benchmarks were obtained by modifying the [`poly-commit`](https://github.com/arkworks-rs/poly-commit) repository. Follow the instructions in `src/benchmarking/brakedown_hyrax_benchmarking_steps.txt` file to reproduce the results.
 - **Whir:**
   - Clone the repository: https://github.com/WizardOfMenlo/whir  
-  - Copy the `src/benchmarking/whirpcs.sh` script from this repository into the cloned repository  
+  - Copy the `src/benchmarking/whirpcs.sh` script into the cloned Whir repository  
   - Run the script inside the Whir repository 
 ---
 
 ## Output Format
 
-The cleaned CSV files (`*_clean.csv`) which contain numeric benchmark results and the PNG files will be saved in `src/benchmarking`. Each row of the CSV file contains:
+The cleaned CSV files (`*_clean.csv`) and the PNG files will be saved in `src/benchmarking`. Each row of the CSV file contains:
 
 ```text
 input_size, commit_time, eval_time, verify_time, proof_size
@@ -125,19 +138,13 @@ cargo test titan_scaling_experiment --release -- --ignored --nocapture --test-th
 ---
 ## Executing TitanSnark
 
+Run:
+
 ```bash
 cargo test test_spartan_titan_index --release -- --nocapture
 ```
 
-This test performs the following steps:
-
-- Generates a **synthetic satisfiable R1CS instance**
-- Runs **SNARK setup** (parameter generation)
-- Computes the **index** for the R1CS instance
-- Generates a **proof**
-- Verifies the proof
-
-It also prints:
+This test prints:
 
 - Setup time  
 - Indexing time  
