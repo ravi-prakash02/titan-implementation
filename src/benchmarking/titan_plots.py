@@ -1,24 +1,36 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 
-def load_scheme(path):
-    df = pd.read_csv(path, header=None)
-    return {
-        "m": df.iloc[:, 0],
-        "commit": df.iloc[:, 1],
-        "eval": df.iloc[:, 2],
-        "verify": df.iloc[:, 3],
-        "proof_size": df.iloc[:, 4],
-    }
+import os
+import pandas as pd
 
-schemes = {
-    "Titan": load_scheme("titan_clean.csv"),
-    "Dory": load_scheme("dory_BLS_clean.csv"),
-    "WHIR": load_scheme("whir_clean.csv"),
-    "Kopis": load_scheme("kopis_clean.csv"),
-    "Brakedown": load_scheme("brakedown_clean.csv"),
-    "hyrax": load_scheme("hyrax_clean.csv"),
-}
+def load_scheme(path):
+    try:
+        df = pd.read_csv(path, header=None)
+        return {
+            "m": df.iloc[:, 0],
+            "commit": df.iloc[:, 1],
+            "eval": df.iloc[:, 2],
+            "verify": df.iloc[:, 3],
+            "proof_size": df.iloc[:, 4],
+        }
+    except FileNotFoundError:
+        print(f"Warning: {path} not found, skipping.")
+        return None
+
+schemes = {}
+
+for name, file in {
+    "Titan": "titan_clean.csv",
+    "Dory": "dory_BLS_clean.csv",
+    "WHIR": "whir_clean.csv",
+    "Kopis": "kopis_clean.csv",
+    "Brakedown": "brakedown_clean.csv",
+    "hyrax": "hyrax_clean.csv",
+}.items():
+    data = load_scheme(file)
+    if data is not None:
+        schemes[name] = data
 
 def plot_metric(metric, ylabel, filename):
     plt.figure()
