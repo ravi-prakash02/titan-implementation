@@ -162,7 +162,7 @@ This test prints:
 
 ## Security Disclaimer
 
-**Titan is an experimental commitment scheme and has not undergone formal security analysis or auditing.**
+**Titan and TitanSnark are experimental constructions and have not undergone formal security analysis or auditing.**
 
 - It may contain **undiscovered vulnerabilities**
 - It should **NOT be used in production systems**
