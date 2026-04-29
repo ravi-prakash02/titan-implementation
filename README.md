@@ -77,7 +77,7 @@ Download the repository as a ZIP file, extract it locally, and navigate into the
 cd titan-implementation-BB26
 ```
 
-All benchmarking and SNARK commands should be run from the root of this repository.
+All the provided benchmarking and SNARK commands should be run from the root of this repository.
 
 ---
 
