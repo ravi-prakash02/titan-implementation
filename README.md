@@ -17,7 +17,7 @@ This project also implements TitanSnark, a variant of Spartan PIOP with Titan PC
 
 All experiments are executed under strict conditions to ensure fair comparison:
 
-- Single-core execution using `taskset` (Linux only, see the [Platform Compatibility](#platform-compatibility))
+- Single-core execution using `taskset` (Linux only, see [Platform Compatibility](#platform-compatibility))
 - Parallelism disabled:
   - `RAYON_NUM_THREADS=1`
   - `RUST_TEST_THREADS=1`
