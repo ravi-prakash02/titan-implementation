@@ -62,11 +62,11 @@ rustup update
 
 ---
 
-### Platform Notes
+### Platform Notes for Rust
 
 - Linux and macOS are fully supported  
 - On Windows, use PowerShell or install via WSL for best compatibility  
-- For benchmarking, Linux is recommended (see [Platform Compatibility](#platform-compatibility))
+- For benchmarking Titan PCS, Linux is recommended (see [Platform Compatibility](#platform-compatibility))
 
 ---
 ## Getting Started
