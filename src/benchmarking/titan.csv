@@ -1,787 +1,757 @@
 
 running 1 test
-test protocols::titanpcs::tests::titan_scaling_experiment ... Time to compute G polynomial: 3428
-Time to compute whir commitment: 2876
+test protocols::titanpcs::tests::titan_scaling_experiment ... Time to compute G polynomial: 3441
+Time to compute whir commitment: 2874
 Time to Evaluation 19 msec
 Time to compute partial commitment = 4 msec
 Folding factor = 1
 Precompute time: 5
-prover r_1: 0x1502940e87d79259ffdf3f368a6ab045d5c33d43a86338731314b983da753275
-prover gi_1: 0
-Restrict time: 28
-Time to generate group sumcheck proof = 51 msec
-Time to do bulletproofs 156 msec
-Time to create instance 0
-verifier r_1: 0x1502940e87d79259ffdf3f368a6ab045d5c33d43a86338731314b983da753275
-DEBUG verify_openings_batch:
-  num_openings (leaves): 62
-  claimed_evaluations.len(): 62
-  alpha.len(): 1
-Batch verification time 6
-Group sumcheck verification took 23 msec, merkle proof transmitted nodes = 382
-Time to create bp instance 0
-Round: 0 ch: 0x3d8699095bc8fb7784c2832ca1850b23a71ff193c17aa4ee688ba49e2dfa1ccd
-Round: 1 ch: 0x0893ffa893c2d50bb5e34f97e0bb7dd50aeebeb6310b4d383a51b1e8f0a0d140
-Round: 2 ch: 0x3bbceef03e9daf22193780532eb038f21e09305049ec79802a9fc95a5ef836ec
-Round: 3 ch: 0x19a53e173a952b5290f6ef83f465a5eb324056d339b0966660c8a199db5bd94d
-Round: 4 ch: 0x1f0a8ca8c23ec3e2e105c591bc7e99d1f0977016862ab31480f87e007b41d1ee
-Bulletproof verification took 18 msec
-Proof size = 22176
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 3427
-Time to compute whir commitment: 2876
-Time to Evaluation 15 msec
-Time to compute partial commitment = 4 msec
-Folding factor = 1
-Precompute time: 5
-prover r_1: 0x2ffb3430619d2abd39c047b352d46471b1f9cebbd5d5032b39ba47d398f8e132
+prover r_1: 0x1762efca6d334e6b45743222214de8614c51b7f211e520343d827c728d66cfb6
 prover gi_1: 0
 Restrict time: 29
-Time to generate group sumcheck proof = 52 msec
-Time to do bulletproofs 156 msec
+Time to generate group sumcheck proof = 54 msec
+Time to do bulletproofs 157 msec
 Time to create instance 0
-verifier r_1: 0x2ffb3430619d2abd39c047b352d46471b1f9cebbd5d5032b39ba47d398f8e132
+verifier r_1: 0x1762efca6d334e6b45743222214de8614c51b7f211e520343d827c728d66cfb6
 DEBUG verify_openings_batch:
-  num_openings (leaves): 64
-  claimed_evaluations.len(): 64
+  num_openings (leaves): 70
+  claimed_evaluations.len(): 70
   alpha.len(): 1
 Batch verification time 6
-Group sumcheck verification took 23 msec, merkle proof transmitted nodes = 395
+Group sumcheck verification took 25 msec, merkle proof transmitted nodes = 437
 Time to create bp instance 0
-Round: 0 ch: 0x3a6e249e7bf3e0d4fc3e2d3367e8ad48bcf963def551c9cad887f847e451b800
-Round: 1 ch: 0x1e816629b8854966d55be59710eb7c0cfb3cef8dc4d0726572ee1caeed7369ed
-Round: 2 ch: 0x2fff916e94931795ba2c24ec99263567b01c8320f0e8b475abca1697f4680523
-Round: 3 ch: 0x17023029f337573eeaa54f73970860a07762ec42ef5cd93a0301420661222191
-Round: 4 ch: 0x049ebadcbc496f27e23cb93a0f7a6730989dc11ee7c6767fb0015cc8f1bdae94
+Round: 0 ch: 0x24ce569bad546e24591e507ac4640e8adfa2f7891db4d8832ef6195b0fb5dbde
+Round: 1 ch: 0x3af80d038835d92a60a0ee6b1420c5418f8ac21ed11fba4728e4c849a47b4006
+Round: 2 ch: 0x144d7648dee4b0e2d022ceeb003b5fb5fe1192dc4605caeae247b48cbfe41943
+Round: 3 ch: 0x1504c7459d6fd360900b77e50b346c03b6ad6ede49da6a6b08e1067073036732
+Round: 4 ch: 0x1eb939926535d93722191796b83de41d794ab2556129d580efeafe7eb5df0aab
 Bulletproof verification took 18 msec
-Proof size = 22592
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 3428
-Time to compute whir commitment: 2874
+Time to compute G polynomial: 3438
+Time to compute whir commitment: 2873
 Time to Evaluation 15 msec
 Time to compute partial commitment = 4 msec
 Folding factor = 1
 Precompute time: 5
-prover r_1: 0x13be9258cb630b79d0b3123fd380794517f6b1fdd4ddbc505b656fd77f6e0493
+prover r_1: 0x3448a2f3e6a3dcf63116a373152f0fc3892260676e9866996f5262c970b61da0
+prover gi_1: 0
+Restrict time: 28
+Time to generate group sumcheck proof = 52 msec
+Time to do bulletproofs 157 msec
+Time to create instance 0
+verifier r_1: 0x3448a2f3e6a3dcf63116a373152f0fc3892260676e9866996f5262c970b61da0
+DEBUG verify_openings_batch:
+  num_openings (leaves): 68
+  claimed_evaluations.len(): 68
+  alpha.len(): 1
+Batch verification time 6
+Group sumcheck verification took 24 msec, merkle proof transmitted nodes = 413
+Time to create bp instance 0
+Round: 0 ch: 0x1c8ef1f0fe1a2522d3ae38078b364c92b7eeb9ec250d66b9975cebfed0a34445
+Round: 1 ch: 0x34cbb8bfc13c0d6def54d225576173ad416c166163e6e5a8b782d3d696e69d54
+Round: 2 ch: 0x3bc5fd98bdf1f9991cf6659eccec8341bb00a7c0781a929c174b9aa61a544d20
+Round: 3 ch: 0x30cb1f17a5b6ee5bf141a134309816aa9fd57793182db1dab487591061cbcaba
+Round: 4 ch: 0x012c55efc8c0e1e66a03325fa3d326a34c784cbfdc983a7026cdf21f6dc3cc88
+Bulletproof verification took 18 msec
+Time to compute G polynomial: 3442
+Time to compute whir commitment: 2873
+Time to Evaluation 15 msec
+Time to compute partial commitment = 4 msec
+Folding factor = 1
+Precompute time: 5
+prover r_1: 0x3310dbac7f74692012e26dec97cf617d90543cfce38de5e78e2c816a422d074a
+prover gi_1: 0
+Restrict time: 29
+Time to generate group sumcheck proof = 54 msec
+Time to do bulletproofs 157 msec
+Time to create instance 0
+verifier r_1: 0x3310dbac7f74692012e26dec97cf617d90543cfce38de5e78e2c816a422d074a
+DEBUG verify_openings_batch:
+  num_openings (leaves): 70
+  claimed_evaluations.len(): 70
+  alpha.len(): 1
+Batch verification time 6
+Group sumcheck verification took 25 msec, merkle proof transmitted nodes = 430
+Time to create bp instance 0
+Round: 0 ch: 0x257e18e04d4152e5b0f5a64f0151f77c874fe7c299db5115f16dd86d55ae721a
+Round: 1 ch: 0x0ea55435aae6960576d4c7133367d9843ed302e4e9aaad4ae8c1f4d6104250c8
+Round: 2 ch: 0x1f0bc83c13705e6c583bde785091d7f55c4849357a52fac11efe4e4d1eb6d4ba
+Round: 3 ch: 0x21ffab0e429ece314f42d4ea0962764cd19b278d15a26a1dcd8efd5a19a956d5
+Round: 4 ch: 0x118222a2d9c7b651789ddf97d88c86956ad436adb9c46907f738397348555a4a
+Bulletproof verification took 18 msec
+Time to compute G polynomial: 3440
+Time to compute whir commitment: 2873
+Time to Evaluation 15 msec
+Time to compute partial commitment = 4 msec
+Folding factor = 1
+Precompute time: 5
+prover r_1: 0x33c88ea96c37074f28d59266b461db677fab16ce46848b6a3a8618d215ef3e3c
 prover gi_1: 0
 Restrict time: 29
 Time to generate group sumcheck proof = 53 msec
-Time to do bulletproofs 156 msec
-Time to create instance 0
-verifier r_1: 0x13be9258cb630b79d0b3123fd380794517f6b1fdd4ddbc505b656fd77f6e0493
-DEBUG verify_openings_batch:
-  num_openings (leaves): 64
-  claimed_evaluations.len(): 64
-  alpha.len(): 1
-Batch verification time 6
-Group sumcheck verification took 23 msec, merkle proof transmitted nodes = 400
-Time to create bp instance 0
-Round: 0 ch: 0x1d22ae2014d168a1823c5e36a315483b5fce7ad2b45299f36857def4f61038b6
-Round: 1 ch: 0x2d524567078282bcbae0d1a2986f4d6abca5eb955523d2e9330ca618f3f2b2cd
-Round: 2 ch: 0x15f0e6f3eb2ba8dab7f2083b5f0aecd388eac86d55ab8ba1340cf924088e0fb3
-Round: 3 ch: 0x0659714549d990fc1ad2fae6b32e2803e73dc9b147a6e4db26a05e004be18422
-Round: 4 ch: 0x2c8b157b979e4e88ee568c14627ff6f1cf5e246ba37d0906662db59d142cd437
-Bulletproof verification took 18 msec
-Proof size = 22752
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 3426
-Time to compute whir commitment: 2878
-Time to Evaluation 15 msec
-Time to compute partial commitment = 4 msec
-Folding factor = 1
-Precompute time: 5
-prover r_1: 0x14d0f82b72911731d54451a10109774ed7415a9070e1c6f0503679faf719d098
-prover gi_1: 0
-Restrict time: 28
-Time to generate group sumcheck proof = 51 msec
 Time to do bulletproofs 157 msec
 Time to create instance 0
-verifier r_1: 0x14d0f82b72911731d54451a10109774ed7415a9070e1c6f0503679faf719d098
+verifier r_1: 0x33c88ea96c37074f28d59266b461db677fab16ce46848b6a3a8618d215ef3e3c
 DEBUG verify_openings_batch:
-  num_openings (leaves): 63
-  claimed_evaluations.len(): 63
+  num_openings (leaves): 69
+  claimed_evaluations.len(): 69
   alpha.len(): 1
 Batch verification time 6
-Group sumcheck verification took 23 msec, merkle proof transmitted nodes = 394
+Group sumcheck verification took 25 msec, merkle proof transmitted nodes = 419
 Time to create bp instance 0
-Round: 0 ch: 0x2b06b0fa2817ab78c419e3e6d289f53c598540b20a564e01c83c3adbaa0d4443
-Round: 1 ch: 0x19b7425911a22dfdadd7b01ef04767c54ecf2e744e25c0aa5a71b852ce13a489
-Round: 2 ch: 0x2a5899b6e480b5d23c0e382fb7900c1b33821f8a0b7dabc5def916bc6f17fea2
-Round: 3 ch: 0x20cd126cb39ef1eb69befd4cd7ad56b96eba1dd376bf57bf5b75fd5fe16dbb00
-Round: 4 ch: 0x2fb71494126a4ef3387a0b5dd1aa01a4c9c9d6c6885c49cd969cea8d1049b79f
+Round: 0 ch: 0x32302d8240a1fe6eee1195ae9b7112df77feb29342042e764569665a37e3b543
+Round: 1 ch: 0x22009574e9c20f0d8a015de7be53e11324739bacd02f10a570892c10323d4203
+Round: 2 ch: 0x025d3571eb7943b42917046d0c5d9da049021a8bb1e55155162930a522d5a513
+Round: 3 ch: 0x0cd7bd962abb665543b0d9017c1dce68ddbda2e8cf9f549ae73addc9b8c1c021
+Round: 4 ch: 0x10ef66e38c8bdd527a310936207bba1596b8edef33d3f3d2daa57184288aab75
 Bulletproof verification took 18 msec
-Proof size = 22560
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 3437
-Time to compute whir commitment: 2877
+Time to compute G polynomial: 3439
+Time to compute whir commitment: 2872
 Time to Evaluation 15 msec
 Time to compute partial commitment = 4 msec
 Folding factor = 1
 Precompute time: 5
-prover r_1: 0x28559868af9acee662082169c7a2b9814abbdeb20292d4c52d216037724f531a
+prover r_1: 0x021ea018b3fdbe8b8e98e6509ffd1f8592098994557f0df8e0e42d0c8db3954c
 prover gi_1: 0
-Restrict time: 28
-Time to generate group sumcheck proof = 51 msec
-Time to do bulletproofs 156 msec
+Restrict time: 29
+Time to generate group sumcheck proof = 53 msec
+Time to do bulletproofs 157 msec
 Time to create instance 0
-verifier r_1: 0x28559868af9acee662082169c7a2b9814abbdeb20292d4c52d216037724f531a
+verifier r_1: 0x021ea018b3fdbe8b8e98e6509ffd1f8592098994557f0df8e0e42d0c8db3954c
 DEBUG verify_openings_batch:
-  num_openings (leaves): 63
-  claimed_evaluations.len(): 63
+  num_openings (leaves): 70
+  claimed_evaluations.len(): 70
   alpha.len(): 1
 Batch verification time 6
-Group sumcheck verification took 23 msec, merkle proof transmitted nodes = 408
+Group sumcheck verification took 25 msec, merkle proof transmitted nodes = 431
 Time to create bp instance 0
-Round: 0 ch: 0x271ae0511c4fd63513ee5c0e7f0dfa9da8720ed1bfd87f6072217a251e559746
-Round: 1 ch: 0x112fefc1533fd912d341d78f3d2f1a734a1519457229db72554b6f0046c2fe0d
-Round: 2 ch: 0x1048b9794446b446752435b853f32d77aac550129913698f9a0a0e9d62d4c253
-Round: 3 ch: 0x2aa61c7b6fbd44efba07a48c8cc00bf6715f924d88d64f73c933a128e7f586f1
-Round: 4 ch: 0x2de5d645615fd7f3e694ffe3c2da4f0e217436f910e7448b59bef565fcdecf21
+Round: 0 ch: 0x101c58b297b7a10e2d8c4f467d465e259cee0489e54973c0881f10968226370f
+Round: 1 ch: 0x0ad6b90cea387d719278264360e3a04c790270bf020917e6e55d57750cdac425
+Round: 2 ch: 0x32aa816abc9546218ac016f126ad1d4bad595ec95f68c9e0b8ec74ef2ec7c8f9
+Round: 3 ch: 0x246b95577afb3017233f500888d037304fe6e6ab47f49ba633635677571560ff
+Round: 4 ch: 0x0cf2f59c90cb461c9d4570fee425c869871ab5135f49ec3f77edf9a03e28cb34
 Bulletproof verification took 18 msec
-Proof size = 23008
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 11113
-Time to compute whir commitment: 2875
-Time to Evaluation 84 msec
+Time to compute G polynomial: 11153
+Time to compute whir commitment: 2874
+Time to Evaluation 85 msec
 Time to compute partial commitment = 4 msec
 Folding factor = 1
 Precompute time: 5
-prover r_1: 0x382df7702e4ed4572c8e1c2bfe4b407e71883ccbb5e291e25ebfff6e7c383c56
+prover r_1: 0x25fe41d699c159340601f1cd1938579d346ceff6ef1f0ccca469a6c99ccaac17
 prover gi_1: 0
 Restrict time: 29
-Time to generate group sumcheck proof = 52 msec
-Time to do bulletproofs 465 msec
+Time to generate group sumcheck proof = 55 msec
+Time to do bulletproofs 545 msec
 Time to create instance 0
-verifier r_1: 0x382df7702e4ed4572c8e1c2bfe4b407e71883ccbb5e291e25ebfff6e7c383c56
+verifier r_1: 0x25fe41d699c159340601f1cd1938579d346ceff6ef1f0ccca469a6c99ccaac17
 DEBUG verify_openings_batch:
-  num_openings (leaves): 63
-  claimed_evaluations.len(): 63
+  num_openings (leaves): 70
+  claimed_evaluations.len(): 70
   alpha.len(): 1
 Batch verification time 6
-Group sumcheck verification took 23 msec, merkle proof transmitted nodes = 381
+Group sumcheck verification took 25 msec, merkle proof transmitted nodes = 423
 Time to create bp instance 0
-Round: 0 ch: 0x04166451f9eda3bd24722e5c58551eb3a4fd0fcbbceeae025ed47734adb0100d
-Round: 1 ch: 0x2968e8706c8b72fff2cbdda9fb7effc79aadaa242875e80172484c742e7ceb8f
-Round: 2 ch: 0x2ab5a63fa11eeefeb9c3f260ae5d1c1c74421108af5991f7e502729803bc1ea3
-Round: 3 ch: 0x26b6cb8e406400dfafbae4d533de39a1552c02db6ace4c5b3dc8a34de05258cf
-Round: 4 ch: 0x029dce44afd6b6068166062f42c4b0957de54ab2c2e1f4dbc7fc0dc0b6acafe1
-Bulletproof verification took 20 msec
-Proof size = 25216
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 11108
+Round: 0 ch: 0x30febaf7650b74334cf0e7130dc85ae3b2af8d99fb082e3cf651bbdfa252b99e
+Round: 1 ch: 0x0d2472a02bf1166f7556744b45f2e774a4875d7e4d87afea92b027b1678d1410
+Round: 2 ch: 0x0c6efb89175d8865d11735879f3fdd78bd934eb9acc9027006353c219d06a02e
+Round: 3 ch: 0x30d0895029c8490d3e2ab662507d8f57d2d64d6f64c9f475e138aa749740ff3a
+Round: 4 ch: 0x0421a048322f0e73cad36d8543842805ddd08cdbaba1a56527b2eb51c1ebb3dd
+Round: 5 ch: 0x249d72a58a9c4b87399e727669209f37a02912de704e901a52ddd95dc99addf4
+Bulletproof verification took 28 msec
+Time to compute G polynomial: 11153
+Time to compute whir commitment: 2873
+Time to Evaluation 80 msec
+Time to compute partial commitment = 4 msec
+Folding factor = 1
+Precompute time: 5
+prover r_1: 0x2472023fd1fb4875d71337604cd5dd738a5e5f1996658f34f94fa90ed42623dc
+prover gi_1: 0
+Restrict time: 29
+Time to generate group sumcheck proof = 54 msec
+Time to do bulletproofs 545 msec
+Time to create instance 0
+verifier r_1: 0x2472023fd1fb4875d71337604cd5dd738a5e5f1996658f34f94fa90ed42623dc
+DEBUG verify_openings_batch:
+  num_openings (leaves): 68
+  claimed_evaluations.len(): 68
+  alpha.len(): 1
+Batch verification time 6
+Group sumcheck verification took 24 msec, merkle proof transmitted nodes = 413
+Time to create bp instance 0
+Round: 0 ch: 0x194972b518ea93e63551dcd5bf4c167dc94f9677c87b1f68c48bd511025feab3
+Round: 1 ch: 0x1528a0fe3bf7d5e47025ffbc2f7e2404271eff9f106d36d30e2099e54046a9b6
+Round: 2 ch: 0x103ede172ba3b35d5ac58d0710a55cd5b2559a1cd50881b4408ce129e414552f
+Round: 3 ch: 0x2c02b6114d84d2e68d5599975594fb5ac7c18b5d95e45d9611d930ba5c02a3a1
+Round: 4 ch: 0x2ea730040c8a77c2523d65591a3847e06ebcda058bdf158cca75abbaf095f44b
+Round: 5 ch: 0x3f8feb99e6d1619e460e53fe3e1d5b07bc0396999686b19ad27ed4662b313455
+Bulletproof verification took 28 msec
+Time to compute G polynomial: 11146
 Time to compute whir commitment: 2874
 Time to Evaluation 79 msec
 Time to compute partial commitment = 4 msec
 Folding factor = 1
 Precompute time: 5
-prover r_1: 0x34a838aff116789788b865f5f360067991960f0b27b43ad40ed8ce99cc09f13b
+prover r_1: 0x161720ead1508645acc8ed5020bc7c4c19c84fc51c845ad9d8ae3570fd9cb94e
 prover gi_1: 0
 Restrict time: 28
-Time to generate group sumcheck proof = 51 msec
-Time to do bulletproofs 465 msec
+Time to generate group sumcheck proof = 53 msec
+Time to do bulletproofs 545 msec
 Time to create instance 0
-verifier r_1: 0x34a838aff116789788b865f5f360067991960f0b27b43ad40ed8ce99cc09f13b
+verifier r_1: 0x161720ead1508645acc8ed5020bc7c4c19c84fc51c845ad9d8ae3570fd9cb94e
 DEBUG verify_openings_batch:
-  num_openings (leaves): 64
-  claimed_evaluations.len(): 64
+  num_openings (leaves): 70
+  claimed_evaluations.len(): 70
   alpha.len(): 1
 Batch verification time 6
-Group sumcheck verification took 23 msec, merkle proof transmitted nodes = 405
+Group sumcheck verification took 25 msec, merkle proof transmitted nodes = 426
 Time to create bp instance 0
-Round: 0 ch: 0x18d34b02bb8a84b64df5666f3938eea5388d77a7adfe3db742b03f28c1890b8e
-Round: 1 ch: 0x13e5e62f218a9d9bed6047ced80c91a721228d681f8f81c243aef522edc2763a
-Round: 2 ch: 0x3d63a963fc67c33f2ec03007f50eddd633206a919e59824a963945d8a06c616d
-Round: 3 ch: 0x2bf6d94ac25582ae87b43d71ce6e64200fb34ef228aeb50ac68a48d68f9a44f5
-Round: 4 ch: 0x36818b2500a726d8ed444386d1b53cd68e19ee741d413291ae64e4e550a1d50f
-Bulletproof verification took 20 msec
-Proof size = 25984
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 11100
+Round: 0 ch: 0x0902fd0e9bcf4cd07ec200f4f3988e0838fcef3fc902fd9ffa4f5d1e30b5d63e
+Round: 1 ch: 0x34ebcdc5806958d712b5e8e67e36b6fca725f1200446820eb71d6ddfea1b9698
+Round: 2 ch: 0x3fde14ffc1a07bb1a60c3dc5700f636b7b5db72eb6ec237e1516c07eb843cb85
+Round: 3 ch: 0x05788ef45f16d1be252cf594b3816b09260f701b323e72a63b5e0b4b8e141556
+Round: 4 ch: 0x0ceec36feb4ce0e6dc33411b484b7dd45886ba5ac35ed90f909ea55c151be5fa
+Round: 5 ch: 0x0ece385666d4b4d26f327bba0a48758ae98202b2a525ca240127c7186bde4d8f
+Bulletproof verification took 28 msec
+Time to compute G polynomial: 11132
 Time to compute whir commitment: 2874
 Time to Evaluation 80 msec
 Time to compute partial commitment = 4 msec
 Folding factor = 1
 Precompute time: 5
-prover r_1: 0x05183b227e4a4a1bbcb34724ae2e8d7e3f2be95824b9943cd4a18294c4b94c23
+prover r_1: 0x052344a317fbc38083e9fc19b819b49b326be5a51bb140e3ee81b754f897821a
 prover gi_1: 0
-Restrict time: 28
-Time to generate group sumcheck proof = 51 msec
-Time to do bulletproofs 466 msec
+Restrict time: 30
+Time to generate group sumcheck proof = 55 msec
+Time to do bulletproofs 545 msec
 Time to create instance 0
-verifier r_1: 0x05183b227e4a4a1bbcb34724ae2e8d7e3f2be95824b9943cd4a18294c4b94c23
+verifier r_1: 0x052344a317fbc38083e9fc19b819b49b326be5a51bb140e3ee81b754f897821a
 DEBUG verify_openings_batch:
-  num_openings (leaves): 62
-  claimed_evaluations.len(): 62
+  num_openings (leaves): 69
+  claimed_evaluations.len(): 69
   alpha.len(): 1
 Batch verification time 6
-Group sumcheck verification took 23 msec, merkle proof transmitted nodes = 383
+Group sumcheck verification took 25 msec, merkle proof transmitted nodes = 407
 Time to create bp instance 0
-Round: 0 ch: 0x30fcecdda40fb789a67647bb9402056df1a8efe617b913945cc4f536d2f7a04b
-Round: 1 ch: 0x2bbe86d3e720881a5e8073d86ba85d72d2d9b8109b34068844978251bc1eab97
-Round: 2 ch: 0x3e0e2906fc0ecfcbcacd6b158e1b616c497282104f3b213a77a6f4ba7291d74e
-Round: 3 ch: 0x1cdb10853952ed468c87024a3d5dfc30ebf4b4ba9a7ecf8c77ac9558634fb736
-Round: 4 ch: 0x2893df2a932b05c80f24cfd33486f82c4f4a4df0deb1e52c1907c6d6d7e5f455
-Bulletproof verification took 20 msec
-Proof size = 25280
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 11100
-Time to compute whir commitment: 2877
+Round: 0 ch: 0x19663a0b3ef0d4c8bf08e622ece0065841dc23f281d546d46eb8e6536cf2a333
+Round: 1 ch: 0x022e807bae892eece5b1c20ae611369d174486bd395c3488bd97f4cb1f3a4fa1
+Round: 2 ch: 0x019d8007b694382289d8255db63af68942bc478db7462fcda35718ebbd04d237
+Round: 3 ch: 0x0c63422bb8bbaa907ef35655210e464ba2d231da6deaf2234eb6d2809285284b
+Round: 4 ch: 0x1134605bda205abc32bd0a3a09259f56e02edd14c289b2610316a6fcd391a93c
+Round: 5 ch: 0x103be02aef63a82983de688349fffceaa669283d4feb612efda2810d54bbd4fd
+Bulletproof verification took 28 msec
+Time to compute G polynomial: 11144
+Time to compute whir commitment: 2873
 Time to Evaluation 79 msec
 Time to compute partial commitment = 4 msec
 Folding factor = 1
 Precompute time: 5
-prover r_1: 0x26ac1b78697fa84263735b5d724e4af081e6d9cb651ea255b1fecb48cff50b36
-prover gi_1: 0
-Restrict time: 29
-Time to generate group sumcheck proof = 52 msec
-Time to do bulletproofs 466 msec
-Time to create instance 0
-verifier r_1: 0x26ac1b78697fa84263735b5d724e4af081e6d9cb651ea255b1fecb48cff50b36
-DEBUG verify_openings_batch:
-  num_openings (leaves): 63
-  claimed_evaluations.len(): 63
-  alpha.len(): 1
-Batch verification time 6
-Group sumcheck verification took 23 msec, merkle proof transmitted nodes = 397
-Time to create bp instance 0
-Round: 0 ch: 0x09eeb781ededee3391ad07bca4b92a84f298866c9e6bd4c2beef8a0ce7110984
-Round: 1 ch: 0x282da8e41c8c9a66e47eff7ec18dd8f507d295781c32716982d239afff5a4029
-Round: 2 ch: 0x35d73f0f21ea2321d48cfba695a4e9b368d95b13f3782d41aa7e193b2b8b8e33
-Round: 3 ch: 0x27aafef6d2398d0ef73b2e0679b6c63491ebf5708c1ff3d72801d989e81b3f0b
-Round: 4 ch: 0x3b4dff87b3ea04962e931f2035bab34d12ca13d74f7d8a10c4289b82c6a81d15
-Bulletproof verification took 20 msec
-Proof size = 25728
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 11100
-Time to compute whir commitment: 2875
-Time to Evaluation 79 msec
-Time to compute partial commitment = 4 msec
-Folding factor = 1
-Precompute time: 5
-prover r_1: 0x14986e51efe42718f7661211a7d3d8a33fb01b42ba70b93d8d13f1eefebe1f2f
+prover r_1: 0x2a1506aaacfdde3fa496cf00046feec1594092f4a7bb357da1ade488ef2a99cd
 prover gi_1: 0
 Restrict time: 29
 Time to generate group sumcheck proof = 53 msec
-Time to do bulletproofs 466 msec
+Time to do bulletproofs 546 msec
 Time to create instance 0
-verifier r_1: 0x14986e51efe42718f7661211a7d3d8a33fb01b42ba70b93d8d13f1eefebe1f2f
+verifier r_1: 0x2a1506aaacfdde3fa496cf00046feec1594092f4a7bb357da1ade488ef2a99cd
 DEBUG verify_openings_batch:
-  num_openings (leaves): 63
-  claimed_evaluations.len(): 63
+  num_openings (leaves): 68
+  claimed_evaluations.len(): 68
   alpha.len(): 1
 Batch verification time 6
-Group sumcheck verification took 23 msec, merkle proof transmitted nodes = 388
+Group sumcheck verification took 24 msec, merkle proof transmitted nodes = 424
 Time to create bp instance 0
-Round: 0 ch: 0x00ef906bf7536832606156f3ced925ae060e3f71400f3800726fdda27d2de28c
-Round: 1 ch: 0x3ff60d5447c71866893c0d8892c760785d244ca2c445ad9de90157095dd955c5
-Round: 2 ch: 0x33f5e050d18dad838b61061a9d1213750b2dd9f87912721596c11b8ca2e9a174
-Round: 3 ch: 0x275a6a9acfa8c4a03c77d9dcbe272fdef635b4d74516a7a4df074bc3397e6f1e
-Round: 4 ch: 0x0a1c737a337b47e1cfc806267498d4b965441a9f0cd4f341eb26232eda626d0d
-Bulletproof verification took 20 msec
-Proof size = 25440
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 38635
-Time to compute whir commitment: 5752
-Time to Evaluation 371 msec
+Round: 0 ch: 0x35ec5e7044b7fd98726dde7a9ace4fd088298c6c17962141b49aa44bbfdf2197
+Round: 1 ch: 0x02c2f1e37080f3aac3f70cc870cb3aaed95a63c191d61ad2581c387fd96789c9
+Round: 2 ch: 0x24704d461304fcccaa6d9c9bc5fe82ed20cc63716c36ee49b240e52ab3555751
+Round: 3 ch: 0x275977a0ce5c0b6bd570a2f881124537e0e38aac826c0b79c9695756dc6534ae
+Round: 4 ch: 0x077589a948c59c7daf2d3de9dc726f9bf12e40ab4bb12075cdddc1e2fb4d37f9
+Round: 5 ch: 0x0d6f6be37fdc3a8bfda917dd8de9dc6a59a50e580d40a8b4488a52877a69980e
+Bulletproof verification took 28 msec
+Time to compute G polynomial: 38631
+Time to compute whir commitment: 5750
+Time to Evaluation 378 msec
 Time to compute partial commitment = 7 msec
 Folding factor = 2
 Precompute time: 10
-prover r_1: 0x3b7867fedb256ba58ef184c9768d712f0adb61083799929d8e35e0ff0aa50e2d
+prover r_1: 0x007fc16067f41798e69fb61474d2a41f4cb75a4efe99c992fdd2ceafdc346022
 prover gi_1: 0
-prover r_2: 0x2b9e9c537a0f3591338088d0266139b61f86b9c90a20621630ddb4532bac207f
+prover r_2: 0x36f0332bd9530ee9f41688970923add052dbef8b004f67cfe70dd5b24ec65aca
 prover gi_2: 2
 Restrict time: 38
-Time to generate group sumcheck proof = 73 msec
-Time to do bulletproofs 838 msec
-Time to create instance 0
-verifier r_1: 0x3b7867fedb256ba58ef184c9768d712f0adb61083799929d8e35e0ff0aa50e2d
-verifier r_2: 0x2b9e9c537a0f3591338088d0266139b61f86b9c90a20621630ddb4532bac207f
-DEBUG verify_openings_batch:
-  num_openings (leaves): 63
-  claimed_evaluations.len(): 63
-  alpha.len(): 2
-Batch verification time 9
-Group sumcheck verification took 27 msec, merkle proof transmitted nodes = 371
-Time to create bp instance 0
-Round: 0 ch: 0x0f0d0408fbad3ae35c18db2f73d3f3283e0f3c70d32f9147f50f53e4ef45e6bc
-Round: 1 ch: 0x26fd7273a33078edcac0e76be1b393437f9c65ddff0c607f917403743d550e85
-Round: 2 ch: 0x262299ac5113585b3b7efd2ba819e3a5e5ba26da759a88c9edfaba18cc4eb59a
-Round: 3 ch: 0x1131c7a7bfb4453dc0b0b2d92defe4eeda60697e5a8903c0c54c25cff721bed2
-Round: 4 ch: 0x04d9b27e6725012d0936489f5169bb627da9d5052443fe22baaae31f11f95f77
-Bulletproof verification took 24 msec
-Proof size = 33184
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 38640
-Time to compute whir commitment: 5750
-Time to Evaluation 372 msec
-Time to compute partial commitment = 7 msec
-Folding factor = 2
-Precompute time: 10
-prover r_1: 0x0ae11d4e14c18ad3fb0ab4f4d84ea9fbb7ef5d53a3913b836a2d5c732864fcee
-prover gi_1: 0
-prover r_2: 0x18e6fe3966a5600170aa5ef46970fa42b7b5beeda8357cbe0b84f283ac0c4b9c
-prover gi_2: 2
-Restrict time: 39
 Time to generate group sumcheck proof = 75 msec
-Time to do bulletproofs 839 msec
+Time to do bulletproofs 957 msec
 Time to create instance 0
-verifier r_1: 0x0ae11d4e14c18ad3fb0ab4f4d84ea9fbb7ef5d53a3913b836a2d5c732864fcee
-verifier r_2: 0x18e6fe3966a5600170aa5ef46970fa42b7b5beeda8357cbe0b84f283ac0c4b9c
+verifier r_1: 0x007fc16067f41798e69fb61474d2a41f4cb75a4efe99c992fdd2ceafdc346022
+verifier r_2: 0x36f0332bd9530ee9f41688970923add052dbef8b004f67cfe70dd5b24ec65aca
 DEBUG verify_openings_batch:
-  num_openings (leaves): 64
-  claimed_evaluations.len(): 64
+  num_openings (leaves): 68
+  claimed_evaluations.len(): 68
   alpha.len(): 2
-Batch verification time 9
-Group sumcheck verification took 27 msec, merkle proof transmitted nodes = 398
+Batch verification time 10
+Group sumcheck verification took 29 msec, merkle proof transmitted nodes = 410
 Time to create bp instance 0
-Round: 0 ch: 0x2625b8a8e56e41e20db3f0dbae613871bcb734973456f4b5751b847dc75f6e1d
-Round: 1 ch: 0x02658a33572051b7be55c915d1167ed657623db1faaa9fa4c1e8cd4c63684689
-Round: 2 ch: 0x3fbedc9f5ca3a5ed2a225b02b4d638f0d931edfacb899cf8c93fd159006b3d71
-Round: 3 ch: 0x1ac301e37c5127e37e47ab506bdcc9e985d856ed4cb9c668245117efb7107414
-Round: 4 ch: 0x1c086feed00e2ec3daf18080c3e5ef91cf453c64b44e8146791a9a043195d4ca
-Bulletproof verification took 24 msec
-Proof size = 34048
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 38664
-Time to compute whir commitment: 5746
-Time to Evaluation 371 msec
+Round: 0 ch: 0x2e5e6ca8ba13794f56f74b963bead76169538c1e916eff32a52d1cbe7c98d99d
+Round: 1 ch: 0x270ad4884331e04a11b54e66ce1e13a12f043661d8d0753892c10d73a5595473
+Round: 2 ch: 0x00024e3661863d86f2d68451cbe7d542d7fc175f330bf1d25fde6f9d228079d4
+Round: 3 ch: 0x3622be859892476fa8bcbdfd322b64ca6e6312fe5d650c78ce07a7ce657e4cbf
+Round: 4 ch: 0x1b9680194e1aaadf88f04346ef8d0c99b45f6d43ce3b8ad5f162833de3b8668f
+Round: 5 ch: 0x32269b83fcf00eab21e6d0195c872ea4be59e49ac2a3dcdf396ec90f33a3cf7e
+Bulletproof verification took 30 msec
+Time to compute G polynomial: 38640
+Time to compute whir commitment: 5751
+Time to Evaluation 381 msec
 Time to compute partial commitment = 7 msec
 Folding factor = 2
 Precompute time: 10
-prover r_1: 0x0d19e44235ef71b4a4b5e9d73453cb4559d1e3f8031ffd96b4d93a784d72f9da
+prover r_1: 0x2057e37e4837e0cfb88697117d9de77783a2cfd594eb710032db44e99abb0df5
 prover gi_1: 0
-prover r_2: 0x0cf3739984f843c1e3f6f266b3a99ede8d1314fcd91210c6339b76e31ce68b93
-prover gi_2: 2
-Restrict time: 38
-Time to generate group sumcheck proof = 73 msec
-Time to do bulletproofs 838 msec
-Time to create instance 0
-verifier r_1: 0x0d19e44235ef71b4a4b5e9d73453cb4559d1e3f8031ffd96b4d93a784d72f9da
-verifier r_2: 0x0cf3739984f843c1e3f6f266b3a99ede8d1314fcd91210c6339b76e31ce68b93
-DEBUG verify_openings_batch:
-  num_openings (leaves): 61
-  claimed_evaluations.len(): 61
-  alpha.len(): 2
-Batch verification time 9
-Group sumcheck verification took 27 msec, merkle proof transmitted nodes = 391
-Time to create bp instance 0
-Round: 0 ch: 0x3e7e1f8aa5321a5e26b32dba0a552ad99f6a5c22c63732bee0eacd82581e7f2c
-Round: 1 ch: 0x222a5921d6d3314c4cb0a770901d22fe59ad80c80a8adb62bc5a9ed70d26b672
-Round: 2 ch: 0x3681690b16f137b093669936b76967515f1a7459cda9b5684c2ce1a11f394f32
-Round: 3 ch: 0x3973f787142f671e75911e10635278860a8f4f59e3e8f2f093c37bff1fde2db2
-Round: 4 ch: 0x10f8c62e4dedfda48dca01f3cfc8ffa3463227c796d3a6a74a3848a6b7951be4
-Bulletproof verification took 24 msec
-Proof size = 33824
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 38667
-Time to compute whir commitment: 5750
-Time to Evaluation 371 msec
-Time to compute partial commitment = 7 msec
-Folding factor = 2
-Precompute time: 10
-prover r_1: 0x1f27f9e8a908a4fb3838f9c0147821ef7472fa34d4a1ab7a75d9dcda1e5ec7af
-prover gi_1: 0
-prover r_2: 0x0667d8090023847b2f8df199480f051e29a6210f5f323e5e8025170a4f8fc4ef
+prover r_2: 0x0487a3481360ee99f655b024647388b5bb5fc0da705985da2ae49258425f8286
 prover gi_2: 2
 Restrict time: 39
-Time to generate group sumcheck proof = 74 msec
-Time to do bulletproofs 838 msec
+Time to generate group sumcheck proof = 76 msec
+Time to do bulletproofs 957 msec
 Time to create instance 0
-verifier r_1: 0x1f27f9e8a908a4fb3838f9c0147821ef7472fa34d4a1ab7a75d9dcda1e5ec7af
-verifier r_2: 0x0667d8090023847b2f8df199480f051e29a6210f5f323e5e8025170a4f8fc4ef
+verifier r_1: 0x2057e37e4837e0cfb88697117d9de77783a2cfd594eb710032db44e99abb0df5
+verifier r_2: 0x0487a3481360ee99f655b024647388b5bb5fc0da705985da2ae49258425f8286
 DEBUG verify_openings_batch:
-  num_openings (leaves): 63
-  claimed_evaluations.len(): 63
+  num_openings (leaves): 67
+  claimed_evaluations.len(): 67
   alpha.len(): 2
 Batch verification time 9
-Group sumcheck verification took 27 msec, merkle proof transmitted nodes = 380
+Group sumcheck verification took 28 msec, merkle proof transmitted nodes = 413
 Time to create bp instance 0
-Round: 0 ch: 0x161f89c0e2b2931d9f366ef5c6453eec52d579fa74738d59640356401ff1bdf6
-Round: 1 ch: 0x30ed05c5aa386d8cfdb324a6a6487c077bae20c1d4ca67deb081fbd79838606a
-Round: 2 ch: 0x2044fd9d091d370c929f39489b4604d6b26fa8be6c5f03cdb1be8c8e9b575d9a
-Round: 3 ch: 0x29b2ba82d124a78602c469ea0b7030726b5837985ec921dc6545e2acdd7e9eb1
-Round: 4 ch: 0x23141785d6b89146762718d6f4ab8ddda44d16a83528f237937008f83910ab6b
-Bulletproof verification took 24 msec
-Proof size = 33472
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 38644
-Time to compute whir commitment: 5745
-Time to Evaluation 371 msec
+Round: 0 ch: 0x3f40cc9a47ea14fe6d16bbe3af761c974686e54db196652d064ca43b90330aa5
+Round: 1 ch: 0x0e6d470730bbf8c0fb3a4a8d8c4dfdef0e0c274e1d92fe228086782031d3c790
+Round: 2 ch: 0x350642a5c495a62351d06f42d618353b978750d31d3d64918d193206b5a9f42b
+Round: 3 ch: 0x0d6cdbabbc2e3881ac02981611d5abd61d4f2e7799a6a82de059c878d9871937
+Round: 4 ch: 0x0956e7580e21ee0c46d1ebcd2bf340b01db744a793bb8cb16ec898a3a12ce929
+Round: 5 ch: 0x04a46e8e06c3edca58af4ca944157f610eb39afbe027b7e99c657b76657f86f2
+Bulletproof verification took 30 msec
+Time to compute G polynomial: 38623
+Time to compute whir commitment: 5748
+Time to Evaluation 378 msec
 Time to compute partial commitment = 7 msec
 Folding factor = 2
 Precompute time: 10
-prover r_1: 0x3a00e18c2e3cd348dbd2d3411dd5ddb81d9718690629fadb99e98008e09702a8
+prover r_1: 0x33e306c5585f6da8bdb2b9da762d33af64a2f3d3102a547e5c1bb1fe2a108fb1
 prover gi_1: 0
-prover r_2: 0x16eb593e1e1e6e2c0f7b10c8ca765dba248fac92065dee4cf91b22b38cb8f252
+prover r_2: 0x175ac812ca2b106a8ab178fa62eb5db4345510fb632d982541629bcc4f060492
 prover gi_2: 2
-Restrict time: 37
-Time to generate group sumcheck proof = 71 msec
-Time to do bulletproofs 838 msec
+Restrict time: 39
+Time to generate group sumcheck proof = 76 msec
+Time to do bulletproofs 960 msec
 Time to create instance 0
-verifier r_1: 0x3a00e18c2e3cd348dbd2d3411dd5ddb81d9718690629fadb99e98008e09702a8
-verifier r_2: 0x16eb593e1e1e6e2c0f7b10c8ca765dba248fac92065dee4cf91b22b38cb8f252
+verifier r_1: 0x33e306c5585f6da8bdb2b9da762d33af64a2f3d3102a547e5c1bb1fe2a108fb1
+verifier r_2: 0x175ac812ca2b106a8ab178fa62eb5db4345510fb632d982541629bcc4f060492
 DEBUG verify_openings_batch:
-  num_openings (leaves): 62
-  claimed_evaluations.len(): 62
+  num_openings (leaves): 69
+  claimed_evaluations.len(): 69
   alpha.len(): 2
-Batch verification time 9
-Group sumcheck verification took 27 msec, merkle proof transmitted nodes = 379
+Batch verification time 10
+Group sumcheck verification took 29 msec, merkle proof transmitted nodes = 422
 Time to create bp instance 0
-Round: 0 ch: 0x2d8314140431e01964fd8382c11ec9dd637257a4faef80d91339ae5f0964824d
-Round: 1 ch: 0x0328cdeb42c898da124792bbde3e247ffdddd739fb0d5fc62e8c9dea063a0d4e
-Round: 2 ch: 0x2ed91e3ca5b9a50a1fd4adc554ee297ae2aaf36a32f2ea8851f5ab7173d3a197
-Round: 3 ch: 0x1a87dc4755e8540a1becff80161887fc5972fb435a8214a0e0dc90bccf1592c9
-Round: 4 ch: 0x35e23d71c79bdeac14ad7d659f70291c2af9204d7b3653c445aed886fa4e7eb3
-Bulletproof verification took 24 msec
-Proof size = 33440
-Merkle tree size, queries = 11, 64
-Time to compute G polynomial: 140798
-Time to compute whir commitment: 13124
-Time to Evaluation 1583 msec
+Round: 0 ch: 0x02a9a59425b0bb60a5e7e83b22bf92ae3c1420b82f83c56e45763709efbfd41d
+Round: 1 ch: 0x339173ed24cf81ff563577ec8cde493f3c58bf799b0a1f131a3a831687e88556
+Round: 2 ch: 0x269c6768164acea3e2995ed0a66e495aea6c8c374d68b549bda8825ea37fa201
+Round: 3 ch: 0x1ac9b519983ec56c71b764ea82cbec70a68c7cede36d6efe06b2771ed996baad
+Round: 4 ch: 0x3b40ce7683b87fb5931543fac0984e472a63c1569e684b76eedf32b6984f9273
+Round: 5 ch: 0x38b69650411a064f983bfb559bccbcd737df6e64cf57ce53cfa58e5e54305d1c
+Bulletproof verification took 30 msec
+Time to compute G polynomial: 38621
+Time to compute whir commitment: 5749
+Time to Evaluation 378 msec
+Time to compute partial commitment = 7 msec
+Folding factor = 2
+Precompute time: 10
+prover r_1: 0x237cd053c4e02af11d191d3c913bfd412bb9b497c72b417dc63b3f2bd483b536
+prover gi_1: 0
+prover r_2: 0x1f6f4705114702093b54f96bab61ce7d097f7cea427c51548619da59aafe5d7f
+prover gi_2: 2
+Restrict time: 40
+Time to generate group sumcheck proof = 77 msec
+Time to do bulletproofs 956 msec
+Time to create instance 0
+verifier r_1: 0x237cd053c4e02af11d191d3c913bfd412bb9b497c72b417dc63b3f2bd483b536
+verifier r_2: 0x1f6f4705114702093b54f96bab61ce7d097f7cea427c51548619da59aafe5d7f
+DEBUG verify_openings_batch:
+  num_openings (leaves): 68
+  claimed_evaluations.len(): 68
+  alpha.len(): 2
+Batch verification time 10
+Group sumcheck verification took 29 msec, merkle proof transmitted nodes = 421
+Time to create bp instance 0
+Round: 0 ch: 0x26d2f35203f2524a08b67c3c5e56db130ad156da34f5c0c63997212e2c43a51c
+Round: 1 ch: 0x361c575b54056e53498e9f8a7df00a0a5425a4bb12fe00946cd5e854a2688fff
+Round: 2 ch: 0x10a71fe30d29c2dba5db57c15cb8cf08e2f2987dde0dfe2f6063dd8534f09806
+Round: 3 ch: 0x2108f9c7bc131fa86df7d90a85e310175cd68158d3ca9e23d3caaa4006683aac
+Round: 4 ch: 0x1611f51520f679a5c9766a501701cd05df3adec223551e862707068da89eb73a
+Round: 5 ch: 0x095ec0e269cd0ee8760af3324f9dcdd190ca2a1d14fa8c5b02f347519e4fab39
+Bulletproof verification took 30 msec
+Time to compute G polynomial: 38622
+Time to compute whir commitment: 5749
+Time to Evaluation 381 msec
+Time to compute partial commitment = 7 msec
+Folding factor = 2
+Precompute time: 10
+prover r_1: 0x002a29ff406f91d3ba87bfbb059838a0c65bcce9d9d59b25ea5efee2324bd063
+prover gi_1: 0
+prover r_2: 0x1a7acb5b672a5297a437ea1fad6c13293cb6f83b2541af567ed2fdf0596368c3
+prover gi_2: 2
+Restrict time: 39
+Time to generate group sumcheck proof = 76 msec
+Time to do bulletproofs 957 msec
+Time to create instance 0
+verifier r_1: 0x002a29ff406f91d3ba87bfbb059838a0c65bcce9d9d59b25ea5efee2324bd063
+verifier r_2: 0x1a7acb5b672a5297a437ea1fad6c13293cb6f83b2541af567ed2fdf0596368c3
+DEBUG verify_openings_batch:
+  num_openings (leaves): 70
+  claimed_evaluations.len(): 70
+  alpha.len(): 2
+Batch verification time 10
+Group sumcheck verification took 29 msec, merkle proof transmitted nodes = 411
+Time to create bp instance 0
+Round: 0 ch: 0x202d1358dc2f56d4bce8a8b8d59e2de4de96bc8b43b6fe56e2a5763065a8a772
+Round: 1 ch: 0x0f7903ce0aaa5479d30c60a56801a99459443071f79e17f8aa40701d5a175393
+Round: 2 ch: 0x0e5aa5b5f254e9c8dbda8f754088d19ec5281a7e5bad24103ebea552e8e3a97a
+Round: 3 ch: 0x36a2e732f7e33466dd155b5a3c5ed032f383f9caecf12d78764738758cef1e10
+Round: 4 ch: 0x16b4a80c76a60bdfbf6d2f45e702d573710b92039628dcebf1a85f13dbdbc26e
+Round: 5 ch: 0x0a11cb2d96c2da70d1e97d66db21a4139dbacfb06da89b63a51c2035bf253164
+Bulletproof verification took 30 msec
+Time to compute G polynomial: 140709
+Time to compute whir commitment: 13127
+Time to Evaluation 1622 msec
 Time to compute partial commitment = 13 msec
 Folding factor = 2
 Precompute time: 18
-prover r_1: 0x35cd68816c5f55b5b04678dc37abcac0968f1f9680893f4b479e442cf695bffd
+prover r_1: 0x1244390af36733891fd105972a3e17ab45e1ec1bdfbf8c00c703e29dcf698029
 prover gi_1: 0
-prover r_2: 0x2f79ddfce91ea6cd315048fd3273a64950f2d8d97eed1828e09a528b2deafd75
+prover r_2: 0x26f9d86d33cf8c7b563705f4c40ab90c48df204f5d226692760b1f059956c7f7
+prover gi_2: 2
+Restrict time: 79
+Time to generate group sumcheck proof = 125 msec
+Time to do bulletproofs 1977 msec
+Time to create instance 0
+verifier r_1: 0x1244390af36733891fd105972a3e17ab45e1ec1bdfbf8c00c703e29dcf698029
+verifier r_2: 0x26f9d86d33cf8c7b563705f4c40ab90c48df204f5d226692760b1f059956c7f7
+DEBUG verify_openings_batch:
+  num_openings (leaves): 69
+  claimed_evaluations.len(): 69
+  alpha.len(): 2
+Batch verification time 10
+Group sumcheck verification took 33 msec, merkle proof transmitted nodes = 487
+Time to create bp instance 0
+Round: 0 ch: 0x00f01ebfc77d09b94297b9a5064b245ffae603f3b44c7cda663fd24c5e000e74
+Round: 1 ch: 0x2216f2a34250a65e6a69add0aac18c0691eabc55dc585697389f4a4d740f1108
+Round: 2 ch: 0x2ff04abe72915bf1580c04b59889fe29869e4c9a1de11be3de83623997956dda
+Round: 3 ch: 0x31ed6d33dc5b682e7e8242066f668fdb5a8d04a560e19683b81604b1172f4817
+Round: 4 ch: 0x1f271e9b12ee918998d40fbf2bfed10b404c03e3aa8a57a473cd6983e744ad4b
+Round: 5 ch: 0x2bbd8ad23e17ab207326bbff060bdf1f128ea87780e6a473364a7898651de50f
+Round: 6 ch: 0x2e68b5b18c7fd06caad40b47680241bc55af8293b5e101971fb639d03da01a5d
+Bulletproof verification took 46 msec
+Time to compute G polynomial: 140864
+Time to compute whir commitment: 13133
+Time to Evaluation 1622 msec
+Time to compute partial commitment = 13 msec
+Folding factor = 2
+Precompute time: 18
+prover r_1: 0x0236034c9745d6f52d37d1989bcd484a584b520df0cbe1337710d8e076915597
+prover gi_1: 0
+prover r_2: 0x2b8feb165cff314862acddc1f31dd8447142f99789a2fee7e3c055f4eef1862d
 prover gi_2: 2
 Restrict time: 78
-Time to generate group sumcheck proof = 122 msec
-Time to do bulletproofs 1705 msec
+Time to generate group sumcheck proof = 125 msec
+Time to do bulletproofs 1977 msec
 Time to create instance 0
-verifier r_1: 0x35cd68816c5f55b5b04678dc37abcac0968f1f9680893f4b479e442cf695bffd
-verifier r_2: 0x2f79ddfce91ea6cd315048fd3273a64950f2d8d97eed1828e09a528b2deafd75
+verifier r_1: 0x0236034c9745d6f52d37d1989bcd484a584b520df0cbe1337710d8e076915597
+verifier r_2: 0x2b8feb165cff314862acddc1f31dd8447142f99789a2fee7e3c055f4eef1862d
 DEBUG verify_openings_batch:
-  num_openings (leaves): 62
-  claimed_evaluations.len(): 62
+  num_openings (leaves): 70
+  claimed_evaluations.len(): 70
   alpha.len(): 2
-Batch verification time 9
-Group sumcheck verification took 31 msec, merkle proof transmitted nodes = 440
+Batch verification time 10
+Group sumcheck verification took 34 msec, merkle proof transmitted nodes = 487
 Time to create bp instance 0
-Round: 0 ch: 0x128ed66fb5cf72a8c5453da60be52ebf66ea6990c923b61ffeb34775089133d6
-Round: 1 ch: 0x0b226bd7ff51c21fab5d187d81102dc017117e2008a49474e232de6d8bf80325
-Round: 2 ch: 0x2cc2c0483bc510274df7172b319385e304bff2fa8c7e2f4eefd732061c1192e7
-Round: 3 ch: 0x1dba59ca58c3b165e775738b55fc8e43c4dfc5cb2209212d7fc0035d19993d6b
-Round: 4 ch: 0x2c3c774a862062d16b40e9eeebb01d3e3ad9fb505a4293a8b7cf1f0502bde872
-Round: 5 ch: 0x34ae3eedb84ecb4a59e9852e463b57634957da903a743240cca28ec7c8aef649
-Bulletproof verification took 33 msec
-Proof size = 39616
-Merkle tree size, queries = 12, 64
-Time to compute G polynomial: 140857
-Time to compute whir commitment: 13132
-Time to Evaluation 1582 msec
+Round: 0 ch: 0x3ed8c706b7329a84ce2292fe36a35727e0572e1b52ee0f310d582bbe6027ca8f
+Round: 1 ch: 0x0e90a6e9296ced73cd92dd5f8433eca4fb11ca116f9ae9eda18e52b529041a56
+Round: 2 ch: 0x3cced886052da20b3dc489e60ac62bd7fe32b46d30c08c763fe08033c5043236
+Round: 3 ch: 0x2ae0702adf2a399d8cc93a8af2913a5a557d69d264999ac9f00b0abefcac3690
+Round: 4 ch: 0x3a5b23d48c5633c743f2e1380cd85520914e38f015602a1921897e258022df9e
+Round: 5 ch: 0x0f55e160782c6315056c35e678c477376741488131d28de15307b464bbf2ac62
+Round: 6 ch: 0x0ea410a8ad1a87e4b78fea457f57197c4f4f1c14d85e152ad29954ff4cc68103
+Bulletproof verification took 46 msec
+Time to compute G polynomial: 140818
+Time to compute whir commitment: 13127
+Time to Evaluation 1621 msec
 Time to compute partial commitment = 13 msec
 Folding factor = 2
 Precompute time: 18
-prover r_1: 0x021e836a7e2f7200ecb35fc2e0e537196670e323de78990f779229c3488dc381
+prover r_1: 0x0cfe734e9f083396fde4290b74a627d3f3d98bf3344a300f7c063569435e01dc
 prover gi_1: 0
-prover r_2: 0x11bbfc3882a3c4359c9fcd7b36ee49eaf5204facc46009fc526fb40e0f3d13a6
+prover r_2: 0x223f5ce390fd1a3532c65f45a802788f17a2100010d1a22c747269bd63ac18f1
 prover gi_2: 2
 Restrict time: 78
-Time to generate group sumcheck proof = 123 msec
-Time to do bulletproofs 1705 msec
+Time to generate group sumcheck proof = 125 msec
+Time to do bulletproofs 1979 msec
 Time to create instance 0
-verifier r_1: 0x021e836a7e2f7200ecb35fc2e0e537196670e323de78990f779229c3488dc381
-verifier r_2: 0x11bbfc3882a3c4359c9fcd7b36ee49eaf5204facc46009fc526fb40e0f3d13a6
+verifier r_1: 0x0cfe734e9f083396fde4290b74a627d3f3d98bf3344a300f7c063569435e01dc
+verifier r_2: 0x223f5ce390fd1a3532c65f45a802788f17a2100010d1a22c747269bd63ac18f1
 DEBUG verify_openings_batch:
-  num_openings (leaves): 63
-  claimed_evaluations.len(): 63
+  num_openings (leaves): 68
+  claimed_evaluations.len(): 68
   alpha.len(): 2
-Batch verification time 9
-Group sumcheck verification took 32 msec, merkle proof transmitted nodes = 463
+Batch verification time 10
+Group sumcheck verification took 33 msec, merkle proof transmitted nodes = 487
 Time to create bp instance 0
-Round: 0 ch: 0x2f4f98aca42d539914060f93a01df4d391841ed61a70ccb9654411b9240ed9c7
-Round: 1 ch: 0x14f9113a644edb3c9d062375f2a170118bdeb37543f8e16decfabf6fbe60f0a8
-Round: 2 ch: 0x182da73a502114494911158f9da9603bbdc349fffa6db6a1eb011649e6c4c4c3
-Round: 3 ch: 0x1afe3be069923aebf3cd9fffaecaed01d5e68c668966ee3f60556f33b204251c
-Round: 4 ch: 0x04a7c4ed7c808f90ef345204354232d57440a76dea6c0755446a545862476814
-Round: 5 ch: 0x26ca436ee182cea277205396e9564d9f34ade17dbab9d964c46074c85fb6ea31
-Bulletproof verification took 33 msec
-Proof size = 40352
-Merkle tree size, queries = 12, 64
-Time to compute G polynomial: 141050
-Time to compute whir commitment: 13130
-Time to Evaluation 1582 msec
-Time to compute partial commitment = 13 msec
-Folding factor = 2
-Precompute time: 18
-prover r_1: 0x3e4ce8ed104e6de3b020657f1ef52a7aab6e6257dff01d9b4d7735e27d387fd3
-prover gi_1: 0
-prover r_2: 0x103feeff1da285c5aab4100f1296a192b8d0a8d2cc1f89b84b2b237517719992
-prover gi_2: 2
-Restrict time: 77
-Time to generate group sumcheck proof = 122 msec
-Time to do bulletproofs 1706 msec
-Time to create instance 0
-verifier r_1: 0x3e4ce8ed104e6de3b020657f1ef52a7aab6e6257dff01d9b4d7735e27d387fd3
-verifier r_2: 0x103feeff1da285c5aab4100f1296a192b8d0a8d2cc1f89b84b2b237517719992
-DEBUG verify_openings_batch:
-  num_openings (leaves): 64
-  claimed_evaluations.len(): 64
-  alpha.len(): 2
-Batch verification time 9
-Group sumcheck verification took 32 msec, merkle proof transmitted nodes = 445
-Time to create bp instance 0
-Round: 0 ch: 0x29292172b9a660f0a49b355684e14c2885c9a89db893cbab333b85b86514b50d
-Round: 1 ch: 0x2bed3b486b2470c777464aed628a564d1b92bdeaffe543eb87701403d071ce22
-Round: 2 ch: 0x2c7d5942b3aa8c6716a8b21a3c8dfd3f98b33ca6f1228f0691b08ee63d41594b
-Round: 3 ch: 0x353a31c9cc0ca3612bd1921001a3aba2c5f9d2c34e7a055c6ae62648efaca936
-Round: 4 ch: 0x1cad7175b2540c1d53f889a199346161d896dac5534ffc87a3c5496c2159b9e9
-Round: 5 ch: 0x2fc12963d247264dc9b99e77ac8c17cc8d92b78c8cdd6144885cc7b33d9ab754
-Bulletproof verification took 33 msec
-Proof size = 39776
-Merkle tree size, queries = 12, 64
-Time to compute G polynomial: 141041
+Round: 0 ch: 0x19bc9a0aa2b145a626769c09a7d17ab2a7af8a2dcbdf4f3bf36709ff8d3c06e9
+Round: 1 ch: 0x084377fc1e927923d9ad0a2d16e76662fb10ae176cf595dcaa7b87609eb84ee2
+Round: 2 ch: 0x17c447f37fd6f1b1298461eb9e20bf08b05119b75d247d7d06b1ca1e25075ca8
+Round: 3 ch: 0x13c0594a0dbca4e2d1acecd2a7e4ae2f53a8e731fa62da016cae68d470571e80
+Round: 4 ch: 0x04cc1491871a01a6a39725074faff555d9fb9dcdc58a91afbe78c1a206d5ccb2
+Round: 5 ch: 0x2f21e0b1177acd7b76d5a97ff1d3fbfb70a045c66da316e27dc978309b059ec2
+Round: 6 ch: 0x16db80301ab07607a56c67aa9a93544186a3481e711972f9e62dc853df020a1f
+Bulletproof verification took 46 msec
+Time to compute G polynomial: 140817
 Time to compute whir commitment: 13126
-Time to Evaluation 1582 msec
+Time to Evaluation 1622 msec
 Time to compute partial commitment = 13 msec
 Folding factor = 2
 Precompute time: 18
-prover r_1: 0x3f48f154848013aebb5eea2abf48c30b72297bd6faedc9371957967539e2ce10
+prover r_1: 0x108e21f62614d3145264eccf531db54bea5d68d5355eebf926dad5254aa68ac6
 prover gi_1: 0
-prover r_2: 0x15e88b6a8df08aaed4e33595889e1e434ec426e4fa9cf32fc492cf2657768748
-prover gi_2: 2
-Restrict time: 76
-Time to generate group sumcheck proof = 121 msec
-Time to do bulletproofs 1705 msec
-Time to create instance 0
-verifier r_1: 0x3f48f154848013aebb5eea2abf48c30b72297bd6faedc9371957967539e2ce10
-verifier r_2: 0x15e88b6a8df08aaed4e33595889e1e434ec426e4fa9cf32fc492cf2657768748
-DEBUG verify_openings_batch:
-  num_openings (leaves): 64
-  claimed_evaluations.len(): 64
-  alpha.len(): 2
-Batch verification time 9
-Group sumcheck verification took 32 msec, merkle proof transmitted nodes = 452
-Time to create bp instance 0
-Round: 0 ch: 0x1ad665d81cfcd7dcf7a1da340140b6cb5c96f94561d65578788506a5237af880
-Round: 1 ch: 0x014ae792b22642b66c6540151c6d30f9c407943a1ab567f6e07db7b9b821a057
-Round: 2 ch: 0x0176a0563983e6c6be86582ae51de7464822056ddb317c19e70a04730a38f04e
-Round: 3 ch: 0x396e7ddaa1a3c69922fa8bc8f08fe5588da19f4bdb31a923f2cb1f8a386df5a0
-Round: 4 ch: 0x14bb8a68d1d8811ec818013cb33821f714d4432e01aa5ed6e516e7f71c3a4c9c
-Round: 5 ch: 0x0633bb8d35ab8ad7d2bcca9dac78ff4fa6a6eac918935a472ee9c10d0ccd1714
-Bulletproof verification took 33 msec
-Proof size = 40000
-Merkle tree size, queries = 12, 64
-Time to compute G polynomial: 140598
-Time to compute whir commitment: 13123
-Time to Evaluation 1583 msec
-Time to compute partial commitment = 13 msec
-Folding factor = 2
-Precompute time: 18
-prover r_1: 0x1b043aa347ab5547ae15918abff5e699bb668b2eb7a3407a2008a09ef7606510
-prover gi_1: 0
-prover r_2: 0x0526e411926e421279442de1e97da852067e51a3c4298d8560f28c807b986e51
+prover r_2: 0x118979e31f1448f56877404c4ecc04c7c24ca38ff0fbe98a5bb69e54c307ecac
 prover gi_2: 2
 Restrict time: 78
-Time to generate group sumcheck proof = 124 msec
-Time to do bulletproofs 1707 msec
+Time to generate group sumcheck proof = 125 msec
+Time to do bulletproofs 1979 msec
 Time to create instance 0
-verifier r_1: 0x1b043aa347ab5547ae15918abff5e699bb668b2eb7a3407a2008a09ef7606510
-verifier r_2: 0x0526e411926e421279442de1e97da852067e51a3c4298d8560f28c807b986e51
+verifier r_1: 0x108e21f62614d3145264eccf531db54bea5d68d5355eebf926dad5254aa68ac6
+verifier r_2: 0x118979e31f1448f56877404c4ecc04c7c24ca38ff0fbe98a5bb69e54c307ecac
 DEBUG verify_openings_batch:
-  num_openings (leaves): 64
-  claimed_evaluations.len(): 64
+  num_openings (leaves): 69
+  claimed_evaluations.len(): 69
   alpha.len(): 2
-Batch verification time 9
-Group sumcheck verification took 32 msec, merkle proof transmitted nodes = 461
+Batch verification time 10
+Group sumcheck verification took 33 msec, merkle proof transmitted nodes = 484
 Time to create bp instance 0
-Round: 0 ch: 0x17c9d11b0f0f9dc016938cda961161ad7f8a1887af4953c0d2fb21d330e2c106
-Round: 1 ch: 0x06aff5f7e4371a2353b7530216343a327e2694a017401c8937bff0c091f69f1e
-Round: 2 ch: 0x0fdf9c816262b7d7b11372089e3506d1911cc4f27d366a38046a97515d7a6a2a
-Round: 3 ch: 0x1f95fbc2842c97259dd12e4ab289dc0d9ca21c682f4d6d205ea1160e8d1bc26b
-Round: 4 ch: 0x1ff022897f5e8c4fadbcd82046d14d743647d0a60d6b4378b42471bcfbb85032
-Round: 5 ch: 0x39fafe80d2372579e972264555f895af7f5f64254773808ef9cb61eb5f3e235a
-Bulletproof verification took 33 msec
-Proof size = 40288
-Merkle tree size, queries = 12, 64
-Time to compute G polynomial: 523423
-Time to compute whir commitment: 26267
-Time to Evaluation 6441 msec
+Round: 0 ch: 0x3d188ea461c6c6cdd53063945a4a1b2f4fbb01a692820d8db025b1b4fb093588
+Round: 1 ch: 0x3bf60b4b3be53026a101723b500d823545b86779475833875c555d3a70d6b23a
+Round: 2 ch: 0x19f39b6d0a2ad13a699107efa52b0ca50820b457ff87d9579060a32911a328b3
+Round: 3 ch: 0x12f26c01f577a9af229824a02691646086c16d377f28b103cf49ab30dba9d30e
+Round: 4 ch: 0x3b6799ac28c0629ce436bac5c9aa5c21ee67af7288c79db5bc9a7c159259d7b9
+Round: 5 ch: 0x20bd2eada57486a5c58d44e4566af9b82de0b5ee27172843f2861d1a21ae2b56
+Round: 6 ch: 0x346b80cfcafafea42ce330c3d2387114829bcfb2c47e0d71089c8c4280acac83
+Bulletproof verification took 46 msec
+Time to compute G polynomial: 140726
+Time to compute whir commitment: 13127
+Time to Evaluation 1620 msec
+Time to compute partial commitment = 13 msec
+Folding factor = 2
+Precompute time: 18
+prover r_1: 0x3cfeb6ea78abbb1966e7a217dfbd0ec85f2f73b5f71fdd91ec8c50fec3b03d6c
+prover gi_1: 0
+prover r_2: 0x1a2ac4034c9852031a43f270ae6f214364acd7008afbe4c52a2c57ee7d269209
+prover gi_2: 2
+Restrict time: 78
+Time to generate group sumcheck proof = 125 msec
+Time to do bulletproofs 1979 msec
+Time to create instance 0
+verifier r_1: 0x3cfeb6ea78abbb1966e7a217dfbd0ec85f2f73b5f71fdd91ec8c50fec3b03d6c
+verifier r_2: 0x1a2ac4034c9852031a43f270ae6f214364acd7008afbe4c52a2c57ee7d269209
+DEBUG verify_openings_batch:
+  num_openings (leaves): 70
+  claimed_evaluations.len(): 70
+  alpha.len(): 2
+Batch verification time 10
+Group sumcheck verification took 34 msec, merkle proof transmitted nodes = 486
+Time to create bp instance 0
+Round: 0 ch: 0x1368f3293f8ad1220ccfcfe813a58f214d8f37bde8c6ce98cf80c5819be9b7a7
+Round: 1 ch: 0x16f060985d49439a114ef6e7a62a37be9bf282a2c2d7ffc09c40b55a28c5e6b8
+Round: 2 ch: 0x1b97a3c8f067e17b5f76a9c70e981ea03abe76468a33be1d8533946904b006f0
+Round: 3 ch: 0x1c0661cebe87a7c45b0255715f683a25da8622553361c0ffc7d939187838eb07
+Round: 4 ch: 0x03886f79d7b9c62e62a0dd42fd426657f3302ec369dd0283c96c9b93e73b9f99
+Round: 5 ch: 0x20d6ff079e9f03cf89abc2456649ede3a9a6cb2c7a41e739debd38b9efbbf8fd
+Round: 6 ch: 0x3d88562e031bd539b82c18ebc78f202845a19d8c16ab464daf710fecfe479c2c
+Bulletproof verification took 46 msec
+Time to compute G polynomial: 525762
+Time to compute whir commitment: 26227
+Time to Evaluation 6550 msec
 Time to compute partial commitment = 24 msec
 Folding factor = 3
 Precompute time: 36
-prover r_1: 0x06a1e68bd4f358cbf17da1ee4ecee2245de6ac75a0b5ec9a9816239f248b7589
+prover r_1: 0x2785b2e60cc9c995cfa2f8677fc3ff44d7cfa56f56c50111de7b6119af32a477
 prover gi_1: 0
-prover r_2: 0x166f7f5fb8f848feb4cecb391c6318f0777038240a36fc608f6a502415775578
+prover r_2: 0x186b208cf0f8476ee46fbbb339d68247983209391dc8c789f6867896282d4343
 prover gi_2: 2
-prover r_3: 0x0c2abe559baa5df9cd1e2ed0e15e196c5b8e6fb66bd0f6f756dc4dc1ef35081b
+prover r_3: 0x1ffd5d1f8ef2657150e788883a189fabcd0e9493d1738e034e548c3f74e5cc1f
 prover gi_3: 2
-Restrict time: 110
-Time to generate group sumcheck proof = 184 msec
-Time to do bulletproofs 3519 msec
+Restrict time: 112
+Time to generate group sumcheck proof = 188 msec
+Time to do bulletproofs 4111 msec
 Time to create instance 0
-verifier r_1: 0x06a1e68bd4f358cbf17da1ee4ecee2245de6ac75a0b5ec9a9816239f248b7589
-verifier r_2: 0x166f7f5fb8f848feb4cecb391c6318f0777038240a36fc608f6a502415775578
-verifier r_3: 0x0c2abe559baa5df9cd1e2ed0e15e196c5b8e6fb66bd0f6f756dc4dc1ef35081b
+verifier r_1: 0x2785b2e60cc9c995cfa2f8677fc3ff44d7cfa56f56c50111de7b6119af32a477
+verifier r_2: 0x186b208cf0f8476ee46fbbb339d68247983209391dc8c789f6867896282d4343
+verifier r_3: 0x1ffd5d1f8ef2657150e788883a189fabcd0e9493d1738e034e548c3f74e5cc1f
 DEBUG verify_openings_batch:
-  num_openings (leaves): 64
-  claimed_evaluations.len(): 64
+  num_openings (leaves): 69
+  claimed_evaluations.len(): 69
+  alpha.len(): 3
+Batch verification time 17
+Group sumcheck verification took 41 msec, merkle proof transmitted nodes = 476
+Time to create bp instance 0
+Round: 0 ch: 0x1704d4d1486d43a09e4492af69b0dbc4e040df5fbff3bc4a50a2bfb6f0e832a9
+Round: 1 ch: 0x3355e12d15f80cd8510ecbdbb64a1be32ad0ecee77f60701d95426bf1f02c51f
+Round: 2 ch: 0x15a64558f09d6f02dbbf5652eef96f8524f871ccae1ce9b3df4aff937391b549
+Round: 3 ch: 0x1b7eb7da2b25681c3190a92ea834c27d6293eb356ed0321fae44b15278c8457c
+Round: 4 ch: 0x1257bbac0c7579253ecdff0b0d4ae7835a0e7e0393f71def4fb304af318e955d
+Round: 5 ch: 0x0e418c3ca19c21e0aae243323f4c45b8dc4b81c3f43b0319bc874594519f4a22
+Round: 6 ch: 0x00ef02f85eb8e81b2be24c07d138908c91861f579c2b87f6bbc4199c02ff1a23
+Round: 7 ch: 0x170c7d760c472c553a13825e1ab1b95f76f3764be9033dd25c8f46e543fbba7b
+Bulletproof verification took 76 msec
+Time to compute G polynomial: 525843
+Time to compute whir commitment: 26239
+Time to Evaluation 6542 msec
+Time to compute partial commitment = 24 msec
+Folding factor = 3
+Precompute time: 36
+prover r_1: 0x3840a13fcd93a348a59619e83da471926eab6001831def41fe74226899dc4a6f
+prover gi_1: 0
+prover r_2: 0x2ebe8e5f0891fbffa8228d5f13584890168715c38d4ad87ef03ccc16f2c92179
+prover gi_2: 2
+prover r_3: 0x26bd8406885e73b656abbfbef2a59c5c03aa179332cc243e28b5f567f400e678
+prover gi_3: 2
+Restrict time: 112
+Time to generate group sumcheck proof = 189 msec
+Time to do bulletproofs 4110 msec
+Time to create instance 0
+verifier r_1: 0x3840a13fcd93a348a59619e83da471926eab6001831def41fe74226899dc4a6f
+verifier r_2: 0x2ebe8e5f0891fbffa8228d5f13584890168715c38d4ad87ef03ccc16f2c92179
+verifier r_3: 0x26bd8406885e73b656abbfbef2a59c5c03aa179332cc243e28b5f567f400e678
+DEBUG verify_openings_batch:
+  num_openings (leaves): 70
+  claimed_evaluations.len(): 70
+  alpha.len(): 3
+Batch verification time 17
+Group sumcheck verification took 41 msec, merkle proof transmitted nodes = 495
+Time to create bp instance 0
+Round: 0 ch: 0x3a8e5edb3eec92ef5f499436967a93b86d22f46cf98649e9febf610cdc10ee52
+Round: 1 ch: 0x2186c281bd74a40aff0ae0201f794fbdad3235738762c5e2cde439399445b8eb
+Round: 2 ch: 0x2f14ccdbc240ed07e0923ce27e4acc0ca7e2f0564716ec604bfd28276d855ea7
+Round: 3 ch: 0x3549de3287a21ee150a8678c6925913454eb060472c2bd3c460b1f6b20cc13ad
+Round: 4 ch: 0x37262ce4bba84890c8387bdfbf5aa455c71dc1fbcd672af57a71ef81904694b3
+Round: 5 ch: 0x3b94c1094c1c96e906ee6f91da7da05a06d0eb09530831f66ea9284b50b4cdcf
+Round: 6 ch: 0x39c9442539102eb1d2adbda149c869e72ef86eb7687b4a585850860ccd21f4cb
+Round: 7 ch: 0x22cda9a079128627fbe7263ad53cd6c173fd5493f65dc353d3762e2dd401bee5
+Bulletproof verification took 76 msec
+Time to compute G polynomial: 525900
+Time to compute whir commitment: 26240
+Time to Evaluation 6543 msec
+Time to compute partial commitment = 24 msec
+Folding factor = 3
+Precompute time: 36
+prover r_1: 0x1d268b103ba141a0649725f20883cb1589972c2dfe5dd2b84d759e118212343a
+prover gi_1: 0
+prover r_2: 0x3fc1cc5ddc6d920bf3aa069a4f88f7190b84c5ae2dee9b70df6c3251762d175e
+prover gi_2: 2
+prover r_3: 0x2ce42a0d63b2b63b642b4af7992eed1307761fe39bd8943a78273c2686860085
+prover gi_3: 2
+Restrict time: 113
+Time to generate group sumcheck proof = 189 msec
+Time to do bulletproofs 4110 msec
+Time to create instance 0
+verifier r_1: 0x1d268b103ba141a0649725f20883cb1589972c2dfe5dd2b84d759e118212343a
+verifier r_2: 0x3fc1cc5ddc6d920bf3aa069a4f88f7190b84c5ae2dee9b70df6c3251762d175e
+verifier r_3: 0x2ce42a0d63b2b63b642b4af7992eed1307761fe39bd8943a78273c2686860085
+DEBUG verify_openings_batch:
+  num_openings (leaves): 68
+  claimed_evaluations.len(): 68
   alpha.len(): 3
 Batch verification time 16
-Group sumcheck verification took 39 msec, merkle proof transmitted nodes = 463
+Group sumcheck verification took 41 msec, merkle proof transmitted nodes = 494
 Time to create bp instance 0
-Round: 0 ch: 0x22a9df6a209d81798561ce378f4788c9a18fd52169e58f8ebc766a0c95e3a84b
-Round: 1 ch: 0x1b7d9dd27fa42286e83f8444a0307631f36fbd5532ef6160ef8b06c1d29c4699
-Round: 2 ch: 0x327df5c8c1db8476527a806730431d1966081ee70e36063a0ec1b369d9dcd6b3
-Round: 3 ch: 0x1315d478dcaaabd2178946ef6775aeddc1d03d25e491c8c631273fff22c058d8
-Round: 4 ch: 0x0238f5bc650b0fd15a3d77ff467a02ed226e1db7fb041d7d38d369967d13971d
-Round: 5 ch: 0x182774dc825f32f6a8c072ed563ade1fb913e6a9fa5a5f6bc70c856306729139
-Round: 6 ch: 0x03372968c3bc5234e097c482f810632e164c39033a1f9f93be72fd38d8b677e5
-Bulletproof verification took 49 msec
-Proof size = 48768
-Merkle tree size, queries = 12, 64
-Time to compute G polynomial: 524846
-Time to compute whir commitment: 26277
-Time to Evaluation 6441 msec
+Round: 0 ch: 0x0bc367a4766d3830c3d078c6e162bc5438e900da50a5e6d598a2f5be4f6bcdc0
+Round: 1 ch: 0x3cfd77e21653732e15e38f88d05e88f2eb5184f20b6913a7353dc16d65bc1e1e
+Round: 2 ch: 0x243b69f6922f5f6830e3e0b78c6903fdea1d7b64c982f45d3ddb3a0d528d7763
+Round: 3 ch: 0x393959201b36eabfbb162ef7cee111eefa76658785bcc289758769cac44b1a4e
+Round: 4 ch: 0x288d83c41dd47d5864aaefdb6b65115641549d9e34d2ef2ba696b535b9d83096
+Round: 5 ch: 0x1badceca0abb0b29972848ed64e996056056bf01a2fb50f68dfd0cefd4df020a
+Round: 6 ch: 0x0b80db5eee5752dcf730546e7c9f2ad0c76e1b1c61f4057936fd9e1a11218303
+Round: 7 ch: 0x0ad5acf08ca78be6b90d0ac458c01acb655898f692b277f279f1776c3f3726fe
+Bulletproof verification took 76 msec
+Time to compute G polynomial: 525915
+Time to compute whir commitment: 26248
+Time to Evaluation 6548 msec
 Time to compute partial commitment = 24 msec
 Folding factor = 3
 Precompute time: 36
-prover r_1: 0x2e05a2f2bd008a50e750d61e780df9a30d3f734de98233ce7bee5581c0f8bee5
+prover r_1: 0x09c1204b1a97288efbad132a97c673d3034b010c3d1e74289cd8588cb268dba8
 prover gi_1: 0
-prover r_2: 0x1e3cc84ca804dc23fc48304749dbc3d238ed030bf57eb8b74e44a5fba4a3fbc0
+prover r_2: 0x24efbbb5087fba33a22a1a647cfc88bb6c8e08e850c8f55d22771657b6a89cbe
 prover gi_2: 2
-prover r_3: 0x23f48a13137358a913bd8da3c086e8d87085f410292a7460ac2de0c606402879
-prover gi_3: 2
-Restrict time: 110
-Time to generate group sumcheck proof = 183 msec
-Time to do bulletproofs 3517 msec
-Time to create instance 0
-verifier r_1: 0x2e05a2f2bd008a50e750d61e780df9a30d3f734de98233ce7bee5581c0f8bee5
-verifier r_2: 0x1e3cc84ca804dc23fc48304749dbc3d238ed030bf57eb8b74e44a5fba4a3fbc0
-verifier r_3: 0x23f48a13137358a913bd8da3c086e8d87085f410292a7460ac2de0c606402879
-DEBUG verify_openings_batch:
-  num_openings (leaves): 62
-  claimed_evaluations.len(): 62
-  alpha.len(): 3
-Batch verification time 15
-Group sumcheck verification took 38 msec, merkle proof transmitted nodes = 447
-Time to create bp instance 0
-Round: 0 ch: 0x2fff4b1ca3c9807ee239017e5c2150485f0387062acaaca5e85bd26d170052a0
-Round: 1 ch: 0x1b5859fa0a1ea4e2aebcaecd31eda561fc210d084348d30297e803fad7c83342
-Round: 2 ch: 0x0c835c6e3902e713c6471b71b35e244b446178603cb1ea7bc5aece5c9d8c7650
-Round: 3 ch: 0x1c880d1a4fffbf42d3d0fa4feea0bc5d1bb856fbe006035f8e040514ffbc0966
-Round: 4 ch: 0x0435660c07adfc3222a9c03b41e72e5241caac4e601d8a6da4b8481897a9c983
-Round: 5 ch: 0x23766be46511bb65fe0ce1482a9f9c7168eb42f89de87c64f0c18c1db7b2d2f6
-Round: 6 ch: 0x0ce61b1aeb17708dac778a953b258feb9c7c715daa61445d2008327d976b3bea
-Bulletproof verification took 49 msec
-Proof size = 48256
-Merkle tree size, queries = 12, 64
-Time to compute G polynomial: 524890
-Time to compute whir commitment: 26261
-Time to Evaluation 6466 msec
-Time to compute partial commitment = 24 msec
-Folding factor = 3
-Precompute time: 36
-prover r_1: 0x3747f696b79266c4ea0a997f8a3690cdd66772a672d6657c7870b8b2126f4c9e
-prover gi_1: 0
-prover r_2: 0x25ecf63a5ac85da7289627240ba3446527b29a070e9d21a09cbd3013135e7105
-prover gi_2: 2
-prover r_3: 0x2e8a38f687f4dcca2f4604b179a50257ffcf59a7cee9cd7903481ebdbab4044e
-prover gi_3: 2
-Restrict time: 110
-Time to generate group sumcheck proof = 184 msec
-Time to do bulletproofs 3518 msec
-Time to create instance 0
-verifier r_1: 0x3747f696b79266c4ea0a997f8a3690cdd66772a672d6657c7870b8b2126f4c9e
-verifier r_2: 0x25ecf63a5ac85da7289627240ba3446527b29a070e9d21a09cbd3013135e7105
-verifier r_3: 0x2e8a38f687f4dcca2f4604b179a50257ffcf59a7cee9cd7903481ebdbab4044e
-DEBUG verify_openings_batch:
-  num_openings (leaves): 63
-  claimed_evaluations.len(): 63
-  alpha.len(): 3
-Batch verification time 15
-Group sumcheck verification took 38 msec, merkle proof transmitted nodes = 454
-Time to create bp instance 0
-Round: 0 ch: 0x0fac7c37469fe57531cd72aa079f215c0f40a85ac5db9f14a6263723ef9234be
-Round: 1 ch: 0x043a51735a0a7a9dc71dbf1e71efdba7a8eebe6044fb20b5b8586cccb9d453af
-Round: 2 ch: 0x1c2cbde0620e9b7f0b50250258e703faa9dae50418779af154c702d2eee2c340
-Round: 3 ch: 0x2216ec3d59ab6988a1c0a24b9c0f1e071427088cea950149af5d1abe93727370
-Round: 4 ch: 0x0e6b12f27e21475a4d2fb098d2d81fec1752c47e47ec7a2d72bb337c3304524f
-Round: 5 ch: 0x2cbc6bf27caccc438c2d8139df931a030dc93710b158c9d3049d5a175bfcfed2
-Round: 6 ch: 0x198fb375331eb6237174749611da1d5376c30ed08f15851eb0d348be8e8ffbc3
-Bulletproof verification took 50 msec
-Proof size = 48480
-Merkle tree size, queries = 12, 64
-Time to compute G polynomial: 524814
-Time to compute whir commitment: 26269
-Time to Evaluation 6441 msec
-Time to compute partial commitment = 24 msec
-Folding factor = 3
-Precompute time: 36
-prover r_1: 0x016089b63641b1b29fa5e1c72478b955008ab641ebb503999a1f234636fa5c70
-prover gi_1: 0
-prover r_2: 0x045a4d1103e1ee5fb96a1013279bf0717419ea24c46240b951ceb50360f26602
-prover gi_2: 2
-prover r_3: 0x285d5a7d1d90eb1cfab5705b614056d5cd9e970eb43bd2a1e288b751e0b726ba
+prover r_3: 0x1550a4c72585835a311759357a8506fdb110f129e280dd1d56ab2a2a25f0ea3a
 prover gi_3: 2
 Restrict time: 111
-Time to generate group sumcheck proof = 185 msec
-Time to do bulletproofs 3519 msec
+Time to generate group sumcheck proof = 187 msec
+Time to do bulletproofs 4113 msec
 Time to create instance 0
-verifier r_1: 0x016089b63641b1b29fa5e1c72478b955008ab641ebb503999a1f234636fa5c70
-verifier r_2: 0x045a4d1103e1ee5fb96a1013279bf0717419ea24c46240b951ceb50360f26602
-verifier r_3: 0x285d5a7d1d90eb1cfab5705b614056d5cd9e970eb43bd2a1e288b751e0b726ba
+verifier r_1: 0x09c1204b1a97288efbad132a97c673d3034b010c3d1e74289cd8588cb268dba8
+verifier r_2: 0x24efbbb5087fba33a22a1a647cfc88bb6c8e08e850c8f55d22771657b6a89cbe
+verifier r_3: 0x1550a4c72585835a311759357a8506fdb110f129e280dd1d56ab2a2a25f0ea3a
 DEBUG verify_openings_batch:
-  num_openings (leaves): 64
-  claimed_evaluations.len(): 64
+  num_openings (leaves): 70
+  claimed_evaluations.len(): 70
+  alpha.len(): 3
+Batch verification time 17
+Group sumcheck verification took 42 msec, merkle proof transmitted nodes = 496
+Time to create bp instance 0
+Round: 0 ch: 0x3a886f80c3e79b6f3e2be332f4708afe30972bef93b447c99d5bfb443ec2cc7c
+Round: 1 ch: 0x0ed2794e45765dbb16497052f6a16618740eace3cf24f1388b3671276ec51088
+Round: 2 ch: 0x3d74c0126ad92f5d04bc712828cab8059a7dbcf9a747cee5e4dd1c294f7047f2
+Round: 3 ch: 0x19da4dae1e97601625d9fc9b80ddd3a4dcdd487e14d902f64620a97bb8e97982
+Round: 4 ch: 0x294c00c9df21b50a8355b86bf77ada3e4a2ca0af3ee87631eceda40869519bf5
+Round: 5 ch: 0x2eafdf1df75b626e9850be4037fbb24bcfefb1877c6b8a689aa21f1b44eeae67
+Round: 6 ch: 0x38c4c533d2ad7cff6b0bd309977f733b9122482aa64daca32fb027f33b4ea87a
+Round: 7 ch: 0x272ae9338d539f01e8d904bfb19a2a99a12bce2cbffdae77a7b4c8bcfdb2f827
+Bulletproof verification took 76 msec
+Time to compute G polynomial: 525946
+Time to compute whir commitment: 26236
+Time to Evaluation 6546 msec
+Time to compute partial commitment = 24 msec
+Folding factor = 3
+Precompute time: 36
+prover r_1: 0x3fa1d7bcd757265023c97c7bdf8c086d9dd52e3824ea148769ba0505136e54fb
+prover gi_1: 0
+prover r_2: 0x1864d537486de38d8d66953079680d303c896505280391d5171958be2c34e8f2
+prover gi_2: 2
+prover r_3: 0x01d9e62a40612a8842bff8e7e97df5d01c6cc57e55408bb94e54563b16233cae
+prover gi_3: 2
+Restrict time: 112
+Time to generate group sumcheck proof = 188 msec
+Time to do bulletproofs 4112 msec
+Time to create instance 0
+verifier r_1: 0x3fa1d7bcd757265023c97c7bdf8c086d9dd52e3824ea148769ba0505136e54fb
+verifier r_2: 0x1864d537486de38d8d66953079680d303c896505280391d5171958be2c34e8f2
+verifier r_3: 0x01d9e62a40612a8842bff8e7e97df5d01c6cc57e55408bb94e54563b16233cae
+DEBUG verify_openings_batch:
+  num_openings (leaves): 68
+  claimed_evaluations.len(): 68
   alpha.len(): 3
 Batch verification time 16
-Group sumcheck verification took 39 msec, merkle proof transmitted nodes = 447
+Group sumcheck verification took 41 msec, merkle proof transmitted nodes = 483
 Time to create bp instance 0
-Round: 0 ch: 0x232774eaeadc8dd24a4ad02935bc3ed02773a1e0462d5113d2338bb33f2bf52f
-Round: 1 ch: 0x1d910703edebb2c226318b66f505aa5fa7b33fdb71ed3ec3b4860b0c4fbcd98f
-Round: 2 ch: 0x299d27a05c5e1bd6dd7120a6a42c3f26d3d6e900745a664c90fd4fac376ae06a
-Round: 3 ch: 0x37b10004f3d1b78e61f80da25e9a3f2595141e9e9556d457511c084dd6b74c37
-Round: 4 ch: 0x319a1223a2a3e3bbdfc5f46e5c934e164d927823eee9a46093f26e97b92b1cc3
-Round: 5 ch: 0x104aa0e4f6025b2228bd424ae590c503fb2b71ad53bd431c65aa43cf10173981
-Round: 6 ch: 0x14fe94d781a11be8d12b36bef983ec33179e41487f299d479e6718a46697b8b9
-Bulletproof verification took 49 msec
-Proof size = 48256
-Merkle tree size, queries = 12, 64
-Time to compute G polynomial: 524396
-Time to compute whir commitment: 26264
-Time to Evaluation 6439 msec
-Time to compute partial commitment = 24 msec
-Folding factor = 3
-Precompute time: 36
-prover r_1: 0x22fb99e79e99ea3aa57b26d7809ad2624f62dde77a437b610cc85495abdb0710
-prover gi_1: 0
-prover r_2: 0x175d2b2f4baed6744b558612d350fd3fdcafe073c50036a530cd27bcf9b650e4
-prover gi_2: 2
-prover r_3: 0x1944f41222d2e07b93f021d25e7427e6b56da53b010f828570ff8d96bf83c7dd
-prover gi_3: 2
-Restrict time: 111
-Time to generate group sumcheck proof = 184 msec
-Time to do bulletproofs 3519 msec
-Time to create instance 0
-verifier r_1: 0x22fb99e79e99ea3aa57b26d7809ad2624f62dde77a437b610cc85495abdb0710
-verifier r_2: 0x175d2b2f4baed6744b558612d350fd3fdcafe073c50036a530cd27bcf9b650e4
-verifier r_3: 0x1944f41222d2e07b93f021d25e7427e6b56da53b010f828570ff8d96bf83c7dd
-DEBUG verify_openings_batch:
-  num_openings (leaves): 63
-  claimed_evaluations.len(): 63
-  alpha.len(): 3
-Batch verification time 15
-Group sumcheck verification took 38 msec, merkle proof transmitted nodes = 433
-Time to create bp instance 0
-Round: 0 ch: 0x25728a93275c75ac095dbf540373e73fc01baa67320bf2c25f4c0b9f6d9869d8
-Round: 1 ch: 0x1074ae5eb1097d5843971403d206fc079bbc8db0cc0f246e524575a569262b56
-Round: 2 ch: 0x20c37144e748665634b1071bfcb94d28628014c27eba69a1bb8602fa9406f7b5
-Round: 3 ch: 0x2c9e24e19f62d8946991acea4d13bed4b235c9b9ff54e35cd1a61a6b169f738f
-Round: 4 ch: 0x06d75810847ed54ec32b32aef70facbaf509a3a59596b4821477a764e7245feb
-Round: 5 ch: 0x021bb1736626901c1daa3163db5655bc4106e5d6a8577dc380c31b3dd5688ef9
-Round: 6 ch: 0x2f1d4141d3da112045f5815c2e9d7e1eee8a730b61344c0989b75896f0d2fafa
-Bulletproof verification took 49 msec
-Proof size = 47808
-Merkle tree size, queries = 12, 64
+Round: 0 ch: 0x3a87d14368be686ccfef77e1a064f0e3b692e23d5463ba9d47a07b0646fc4aa1
+Round: 1 ch: 0x3261f428285c7681f2c1a6172d14249c94ef1e224c83f2f72e8ac927fe4b6e65
+Round: 2 ch: 0x20fd5b3e8689d56e1f6a98073871d47a8fefe3d9c9b8dd71ffcb2a9783d3c835
+Round: 3 ch: 0x33bd11df7ed7e340d17c81aae0ca17180ec1e9f1101b09cb5dd421c2be7be12d
+Round: 4 ch: 0x310d7a4ed399b2aea0d798183b7dcb52412c7928ccfb4df18583a001749f4243
+Round: 5 ch: 0x3c07ce70764e11207f30ce2e07ac71b1b030f5194b85faa06c29640c2759e3f9
+Round: 6 ch: 0x05aaca468f0af1c3fca579b7ec67a0f1a12ca53c770645a4e6656408184b190b
+Round: 7 ch: 0x3487d2b11fe75aa0232a83cfb1d94eba1c9a12ef6667cee3e858d7933e91d051
+Bulletproof verification took 76 msec
 m,commit_ms,prove_ms,verifier_ms,proof_bytes
-18,6305,229,42,23008
-20,13980,603,44,25440
-22,44399,1292,51,33440
-24,153996,3425,65,40288
-26,550742,10174,88,47808
+18,6313,232,43,24985
+20,14020,685,53,26899
+22,44377,1422,59,35328
+24,153915,3739,80,41920
+26,552112,10872,118,51033
 ok
 
-test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 40 filtered out; finished in 4312.96s
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 36 filtered out; finished in 5086.34s
 
