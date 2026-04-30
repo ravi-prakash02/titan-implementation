@@ -93,6 +93,8 @@ where
         let mut proof_size = 0usize;
         proof_size += self.merkle_transmitted_nodes();
         proof_size += 3usize * self.round_messages.len();
+        let total: usize = self.opening_proofs.leaves.iter().map(Vec::len).sum();
+        proof_size += total;
         proof_size += self.g_poly.coeffs.len();
         proof_size
     }
