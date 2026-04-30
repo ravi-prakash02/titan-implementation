@@ -1110,7 +1110,7 @@ mod tests {
         let mut results = Vec::new();
 
         for m in (18..=26).step_by(2) {
-            let runs = 2;
+            let runs = 4;
             let mut c_sum: u128 = 0;
             let mut p_sum: u128 = 0;
             let mut v_sum: u128 = 0;
