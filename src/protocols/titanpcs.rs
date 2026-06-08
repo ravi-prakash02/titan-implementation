@@ -1107,16 +1107,25 @@ mod tests {
     #[test]
     #[ignore]
     fn titan_scaling_experiment() {
+        // Prints averaged benchmark results for each value of m (m: number of variables)
+        
         let mut results = Vec::new();
 
+        // Run experiments for m = 18, 20, 22, 24, 26
         for m in (18..=26).step_by(2) {
+        
+            // Number of benchmark repetitions for averaging
             let runs = 4;
-            let mut c_sum: u128 = 0;
-            let mut p_sum: u128 = 0;
-            let mut v_sum: u128 = 0;
-            let mut proof_size: usize = 0;
+
+            // accumulators
+            let mut c_sum: u128 = 0; // commit time
+            let mut p_sum: u128 = 0; // prove time
+            let mut v_sum: u128 = 0; // verify time
+            let mut proof_size: usize = 0; // proof size
 
             for _ in 0..runs {
+
+                // Run a single Titan benchmark instance
                 let (c, p, v, size) = run_titan_once(m);
                 c_sum += c;
                 p_sum += p;
@@ -1124,9 +1133,11 @@ mod tests {
                 proof_size += size; 
             }
 
+            // Store averaged results
             results.push((m, c_sum / runs as u128, p_sum / runs as u128, v_sum / runs as u128, proof_size / runs as usize));
         }
 
+        // Print benchmark results in CSV format
         println!("m,commit_ms,prove_ms,verifier_ms,proof_bytes");
         for (m, c, p, v, size) in &results {
             println!("{},{},{},{},{}", m, c, p, v, size);
