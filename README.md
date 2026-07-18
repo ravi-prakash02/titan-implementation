@@ -1,6 +1,6 @@
 # Titan Benchmarking
 
-This project implements and benchmarks [Titan](https://eprint.iacr.org/2026/908), our polynomial commitment scheme (PCS), against existing schemes. 
+This project implements [Titan](https://eprint.iacr.org/2026/908), our polynomial commitment scheme (PCS) and benchmarks it against existing schemes. 
 
 The PCS evaluation compares performance across the following metrics:
 
