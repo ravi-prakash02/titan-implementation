@@ -1,6 +1,6 @@
 # Titan Benchmarking
 
-This project implements [Titan](https://eprint.iacr.org/2026/908), our polynomial commitment scheme (PCS) and benchmarks it against existing schemes. 
+This project implements Titan, our polynomial commitment scheme (PCS) and benchmarks it against some of the existing schemes. 
 
 The PCS evaluation compares performance across the following metrics:
 
@@ -9,7 +9,7 @@ The PCS evaluation compares performance across the following metrics:
 - Verification time  
 - Proof size  
 
-This project also implements TitanSnark, a variant of Spartan PIOP with Titan PCS to obtain a transparent SNARK.
+This project also implements the MicroSpartan PIOP with Titan PCS to obtain a transparent SNARK.
 
 ---
 
@@ -18,7 +18,7 @@ This project also implements TitanSnark, a variant of Spartan PIOP with Titan PC
 All experiments are executed under strict conditions to ensure fair comparison:
 
 - Single-core execution using `taskset` (Linux only, see [Platform Compatibility](#platform-compatibility))
-- Parallelism disabled:
+- Parallelism disabled using:
   - `RAYON_NUM_THREADS=1`
   - `RUST_TEST_THREADS=1`
 - Tests run in release mode
@@ -71,21 +71,19 @@ rustup update
 ---
 ## Getting Started
 
-Download the repository as a ZIP file, extract it locally, and navigate into the extracted directory using a terminal (replace with the actual path if needed):
+Download the repository as a ZIP file, extract it locally, and navigate into the extracted directory using a terminal:
 
 ```bash
-cd titan-implementation-BB26
+cd path/to/titan-implementation-BB26
 ```
 
-All the provided benchmarking and SNARK commands should be run from the root of this repository.
+All the provided benchmarking and other commands should be run from the root of this directory.
 
 ---
 
 ## Running Experiments
 
-### Titan PCS
-
-Run:
+To benchmark Titan PCS, run:
 
 ```bash
 taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
@@ -93,7 +91,7 @@ cargo test titan_scaling_experiment --release -- --ignored --nocapture --test-th
 | grep '^[0-9]' > src/benchmarking/titan_clean.csv
 ```
 
-Generate plots:
+To generate plots:
 
 ```bash
 python src/benchmarking/titan_plot.py
@@ -102,20 +100,46 @@ python src/benchmarking/titan_plot.py
 ---
 ### Other Schemes (Baselines)
 
-Benchmarks for other schemes (Brakedown, Dory, Hyrax, Kopis, Whir) have already been included in the repository.
+Benchmarking results for other schemes (Brakedown, Dory, Hyrax, Kopis, Whir) have already been included. Follow the steps below to reproduce them.
 
-To reproduce their results, run their corresponding scaling experiments using the **same command structure and environment settings** as above (i.e., single-core execution, disabled parallelism).
+To reproduce the results of Dory and Kopis, run their corresponding scaling experiments (using the **same command structure and environment settings** as above). 
+
+Example: For Dory: 
+ ```bash
+taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
+cargo test dory_BLS_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
+| grep '^[0-9]' > src/benchmarking/dory_BLS_clean.csv
+```
 
 - **Brakedown & Hyrax:** Benchmarks were obtained by modifying the [`poly-commit`](https://github.com/arkworks-rs/poly-commit) repository. Follow the instructions in `src/benchmarking/brakedown_hyrax_benchmarking_steps.txt` file to reproduce the results.
+
 - **Whir:**
-  - Clone the repository: https://github.com/WizardOfMenlo/whir  
-  - Copy the `src/benchmarking/whirpcs.sh` script into the cloned Whir repository  
-  -  Navigate to the repository and run:
+Benchmarks were obtained by modifying the [`Whir`](https://github.com/WizardOfMenlo/whir.git) repository. To reproduce them:
+  - Make sure [Git](https://git-scm.com/) is installed:
+     ```bash
+     git --version
+     ```
+     If Git is not installed, follow the [Git installation instructions](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git).
 
-  ```bash
-  bash whirpcs.sh
-  ```
+  - Clone the Whir repository:
+     ```bash
+     git clone https://github.com/WizardOfMenlo/whir.git
+     ```
 
+  - Copy the `whirpcs.sh` benchmarking script (which is present inside `src/benchmarking`) into the Whir repository:
+     ```bash
+     cp src/benchmarking/whirpcs.sh whir/
+     ```
+
+  - Navigate to the Whir repository:
+     ```bash
+     cd whir
+     ```
+
+  - Run the benchmarking script:
+     ```bash
+     ./whirpcs.sh
+     ```
 ---
 
 ## Output Format
@@ -141,7 +165,7 @@ cargo test titan_scaling_experiment --release -- --ignored --nocapture --test-th
 | grep '^[0-9]' > src/benchmarking/titan_clean.csv
 ```
 ---
-## Executing TitanSnark
+## Executing MicroSpartan PIOP with Titan PCS
 
 Run:
 
@@ -167,7 +191,7 @@ This test prints:
 
 ## Security Disclaimer
 
-**Titan and TitanSnark are experimental constructions and have not undergone formal security analysis or auditing.**
+**Titan and MicroSpartan PIOP with Titan PCS are experimental constructions and have not undergone formal security analysis or auditing.**
 
 - It may contain **undiscovered vulnerabilities**
 - It should **NOT be used in production systems**

@@ -2,10 +2,10 @@
 
 # COPY THIS FILE INSIDE THE MODIFIED WHIR REPO AND RUN IT THERE (MODIFIED: prints commit and prove time separately)
 
-echo "m,commit_ms,prove_ms,verifier_ms,proof_bytes" > whir.csv
+# echo "m,commit_ms,prove_ms,verifier_ms,proof_bytes" > whir.csv
 
 for m in 18 20 22 24 26; do
-  echo "Running WHIR m=$m (5 repetitions)"
+  # echo "Running WHIR m=$m (5 repetitions)"
 
   commit_sum=0
   prove_sum=0
@@ -14,7 +14,7 @@ for m in 18 20 22 24 26; do
   reps=5
 
   for ((i=1; i<=reps; i++)); do
-    echo "  Run $i/$reps"
+    # echo "  Run $i/$reps"
 
     out=$(taskset -c 0 env RAYON_NUM_THREADS=1 cargo run --release -- \
         --type PCS \
@@ -63,5 +63,5 @@ for m in 18 20 22 24 26; do
   verifier_avg=$(awk "BEGIN {print $verifier_sum/$reps}")
   size_avg=$(awk "BEGIN {print $size_sum/$reps}")
 
-  echo "$m,$commit_avg,$prove_avg,$verifier_avg,$size_avg" >> whir.csv
+  echo "$m,$commit_avg,$prove_avg,$verifier_avg,$size_avg" >> whir_clean.csv
 done
