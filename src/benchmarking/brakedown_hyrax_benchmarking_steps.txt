@@ -308,6 +308,10 @@ add this inside mod tests{}, and remove all other tests:
         }
     }   
 
-(to benchmark the schemes, run: `taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
+To benchmark the schemes, run: 
+
+taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
 cargo test brakedown_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
-| grep '^[0-9]' > brakedown_clean.csv` for brakedown and run hyrax using the same command structure.)
+| grep '^[0-9]' > brakedown_clean.csv
+
+for brakedown and run hyrax using the same command structure (repalce brakedown with hyrax)
