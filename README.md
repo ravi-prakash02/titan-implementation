@@ -91,10 +91,23 @@ cargo test titan_scaling_experiment --release -- --ignored --nocapture --test-th
 | grep '^[0-9]' > src/benchmarking/titan_clean.csv
 ```
 
-To generate plots:
+To generate plots, Python 3 must be installed. Check whether Python is installed:
 
 ```bash
-python src/benchmarking/titan_plot.py
+python3 --version
+```
+
+If Python 3 is not installed, install it using your system's package manager. For example, on Ubuntu/Debian:
+
+```bash
+sudo apt update
+sudo apt install python3
+```
+
+Then generate the plots:
+
+```bash
+python3 src/benchmarking/titan_plot.py
 ```
 
 ---
