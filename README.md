@@ -74,7 +74,7 @@ rustup update
 Download the repository as a ZIP file, extract it locally, and navigate into the extracted directory using a terminal:
 
 ```bash
-cd path/to/titan-implementation-BB26
+cd path/to/titan-implementation
 ```
 
 All the provided benchmarking and other commands should be run from the root of this directory.
