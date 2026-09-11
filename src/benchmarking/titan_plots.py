@@ -26,7 +26,8 @@ for name, file in {
     "WHIR": "whir_clean.csv",
     "Kopis": "kopis_clean.csv",
     "Brakedown": "brakedown_clean.csv",
-    "hyrax": "hyrax_clean.csv",
+    "Hyrax": "hyrax_clean.csv",
+    "Hyrax (Pasta)":"hyrax_pasta_clean.csv"
 }.items():
     data = load_scheme(file)
     if data is not None:
