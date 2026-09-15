@@ -117,19 +117,19 @@ Benchmarking results for other schemes (Brakedown, Dory, Hyrax, Kopis, Whir) hav
 
 - **Dory & Kopis:** To reproduce the results of Dory and Kopis, run their corresponding scaling experiments.
 
-For Dory: 
- ```bash
-taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
-cargo test dory_BLS_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
-| grep '^[0-9]' > src/benchmarking/dory_BLS_clean.csv
-```
+   - For Dory: 
+      ```bash
+      taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
+      cargo test dory_BLS_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
+      | grep '^[0-9]' > src/benchmarking/dory_BLS_clean.csv
+      ```
 
-For Kopis: 
- ```bash
-taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
-cargo test kopis_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
-| grep '^[0-9]' > src/benchmarking/dory_BLS_clean.csv
-```
+   - For Kopis: 
+      ```bash
+      taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
+      cargo test kopis_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
+      | grep '^[0-9]' > src/benchmarking/dory_BLS_clean.csv
+      ```
 
 - **Brakedown & Hyrax:** Benchmarks were obtained by modifying the [`poly-commit`](https://github.com/arkworks-rs/poly-commit) repository. Follow the instructions in `src/benchmarking/brakedown_hyrax_benchmarking_steps.txt` file to reproduce the results.
 
