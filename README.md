@@ -115,7 +115,7 @@ python3 src/benchmarking/titan_plot.py
 
 Benchmarking results for other schemes (Brakedown, Dory, Hyrax, Kopis, Whir) have already been included. Follow the steps below to reproduce them.
 
-To reproduce the results of Dory and Kopis, run their corresponding scaling experiments.
+- **Dory & Kopis:** To reproduce the results of Dory and Kopis, run their corresponding scaling experiments.
 
 For Dory: 
  ```bash
@@ -133,8 +133,7 @@ cargo test kopis_scaling_experiment --release -- --ignored --nocapture --test-th
 
 - **Brakedown & Hyrax:** Benchmarks were obtained by modifying the [`poly-commit`](https://github.com/arkworks-rs/poly-commit) repository. Follow the instructions in `src/benchmarking/brakedown_hyrax_benchmarking_steps.txt` file to reproduce the results.
 
-- **Whir:**
-Benchmarks were obtained by modifying the [`Whir`](https://github.com/WizardOfMenlo/whir.git) repository. To reproduce them:
+- **Whir:** Benchmarks were obtained by modifying the [`Whir`](https://github.com/WizardOfMenlo/whir.git) repository. To reproduce them:
   - Make sure [Git](https://git-scm.com/) is installed:
      ```bash
      git --version
