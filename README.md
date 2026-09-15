@@ -128,7 +128,7 @@ Benchmarking results for other schemes (Brakedown, Dory, Hyrax, Kopis, Whir) hav
       ```bash
       taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
       cargo test kopis_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
-      | grep '^[0-9]' > src/benchmarking/dory_BLS_clean.csv
+      | grep '^[0-9]' > src/benchmarking/kopis_clean.csv
       ```
 
 - **Brakedown & Hyrax:** Benchmarks were obtained by modifying the [`poly-commit`](https://github.com/arkworks-rs/poly-commit) repository. Follow the instructions in `src/benchmarking/brakedown_hyrax_benchmarking_steps.txt` file to reproduce the results.
