@@ -115,12 +115,19 @@ python3 src/benchmarking/titan_plot.py
 
 Benchmarking results for other schemes (Brakedown, Dory, Hyrax, Kopis, Whir) have already been included. Follow the steps below to reproduce them.
 
-To reproduce the results of Dory and Kopis, run their corresponding scaling experiments (using the **same command structure and environment settings** as above). 
+To reproduce the results of Dory and Kopis, run their corresponding scaling experiments.
 
-Example, for Dory: 
+For Dory: 
  ```bash
 taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
 cargo test dory_BLS_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
+| grep '^[0-9]' > src/benchmarking/dory_BLS_clean.csv
+```
+
+For Kopis: 
+ ```bash
+taskset -c 0 env RAYON_NUM_THREADS=1 RUST_TEST_THREADS=1 \
+cargo test kopis_scaling_experiment --release -- --ignored --nocapture --test-threads=1 \
 | grep '^[0-9]' > src/benchmarking/dory_BLS_clean.csv
 ```
 
