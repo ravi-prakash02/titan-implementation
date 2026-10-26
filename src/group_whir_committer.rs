@@ -16,12 +16,14 @@ use std::time::Instant;
 use crate::merkle_tree::{MerkleTreeParams, Sha256Compress, Sha256Digest, Sha256LeafHash};
 use crate::multilinear::MultilinearPoly;
 use crate::traits::{ByteSerializable, InnerProduct, Linear};
-use crate::utils::{eq_all, eq_from_index, multilinear_fft};
+use crate::titantranscript::get_challenge;
+use crate::utils::{eq_all, eq_from_index, generate_power_vec, multilinear_fft};
+use ark_crypto_primitives::sponge::Absorb;
 use ark_serialize::CanonicalSerialize;
 use ark_std::log2;
 use rand::thread_rng;
 use rayon::prelude::{IntoParallelIterator, IntoParallelRefIterator};
-use std::collections::HashMap;
+use std::collections::{BTreeSet, HashMap};
 // ============================================================================
 // Merkle Proof Strategy
 // ============================================================================
@@ -216,6 +218,37 @@ impl<C: ark_crypto_primitives::merkle_tree::Config, G> BatchOpeningProof<C, G> {
             }
         }
     }
+
+    /// Checks that this proof opens exactly the leaves queried by the verifier.
+    /// Compressed proofs must open the sorted, deduplicated set of `queries` (as produced by
+    /// arkworks' `generate_multi_proof`); Uncompressed proofs must open `queries` in order.
+    /// Also rejects proofs whose number of leaves differs from the number of authenticated
+    /// indices, since surplus leaves would not be checked against the Merkle root.
+    pub fn opens_exactly(&self, queries: &[usize]) -> bool {
+        let indices = self.leaf_indices();
+        if indices.len() != self.leaves.len() {
+            return false;
+        }
+        match &self.multi_proof {
+            MerkleMultiProof::Compressed(mp) => {
+                let n = mp.leaf_indexes.len();
+                if mp.leaf_siblings_hashes.len() != n
+                    || mp.auth_paths_prefix_lenghts.len() != n
+                    || mp.auth_paths_suffixes.len() != n
+                {
+                    return false;
+                }
+                let expected: Vec<usize> = queries
+                    .iter()
+                    .copied()
+                    .collect::<BTreeSet<usize>>()
+                    .into_iter()
+                    .collect();
+                indices == expected
+            }
+            MerkleMultiProof::Uncompressed(_) => indices == queries,
+        }
+    }
 }
 
 /// The GroupWhir commitment scheme for multilinear polynomials
@@ -231,6 +264,36 @@ where
     pub tree: ArkMerkleTree<C>,   // Merkle tree over coset-wise leaves
     pub root: C::InnerDigest,     // Merkle root
     pub leaves: Vec<Vec<G>>,      // leaves for each coset
+    pub ood_eval: G,              // out-of-domain evaluation y_0 = poly(ood_point(root)) (Sec. 5.4)
+}
+
+/// The public commitment: Merkle root together with the out-of-domain evaluation
+/// y_0 = G(z_0, z_0^2, ..., z_0^{2^{m-1}}) where z_0 = RO(root) (Sec. 5.4). The OOD sample binds
+/// the prover to a unique polynomial in the list-decoding regime.
+#[derive(Clone, Debug)]
+pub struct GroupWhirPublicCommitment<C: ark_crypto_primitives::merkle_tree::Config, G> {
+    pub root: C::InnerDigest,
+    pub ood_eval: G,
+}
+
+/// Derives the out-of-domain point (z_0, z_0^2, ..., z_0^{2^{m-1}}) with z_0 = RO(root).
+/// z_0 is resampled (deterministically) in the negligible-probability event that some power is 0
+/// or 1, since the group sum-check prover divides by z_0^{2^j} and 1 - z_0^{2^j}.
+pub fn ood_point<C, F>(root: &C::InnerDigest, m: usize) -> Vec<F>
+where
+    C: ark_crypto_primitives::merkle_tree::Config,
+    F: ff::Field + ByteSerializable,
+{
+    let mut transcript = merlin::Transcript::new(b"titan-ood");
+    transcript.append_u64(b"m", m as u64);
+    transcript.append_message(b"root", &root.to_sponge_bytes_as_vec());
+    loop {
+        let z0: F = get_challenge(&mut transcript, b"z_0");
+        let w = generate_power_vec(z0, m, false);
+        if w.iter().all(|x| *x != F::ZERO && *x != F::ONE) {
+            return w;
+        }
+    }
 }
 
 impl<C, G> GroupWhirCommitment<C, G>
@@ -241,7 +304,7 @@ where
     /// Create a commitment to a multilinear polynomial with coset-wise structure
     /// we require additional trait bound on G, as restrict function requires certain properties
     /// with respect to underlying field.
-    pub fn new<F: ff::Field>(
+    pub fn new<F: ff::Field + ByteSerializable>(
         poly: &MultilinearPoly<G>,
         k: usize,
         domain_points: Vec<F>,
@@ -289,6 +352,7 @@ where
             .map_err(|e| format!("Failed to create Merkle tree: {:?}", e))?;
 
         let root = tree.root();
+        let ood_eval = poly.evaluate_msm(&ood_point::<C, F>(&root, poly.num_vars));
 
         Ok(GroupWhirCommitment {
             poly: MultilinearPoly::new(poly.coeffs.clone()),
@@ -296,11 +360,19 @@ where
             tree,
             root,
             leaves,
+            ood_eval,
         })
     }
 
     pub fn root(&self) -> C::InnerDigest {
         self.root.clone()
+    }
+
+    pub fn public(&self) -> GroupWhirPublicCommitment<C, G>
+    where
+        G: Copy,
+    {
+        GroupWhirPublicCommitment { root: self.root.clone(), ood_eval: self.ood_eval }
     }
 
     /// Open the commitment at an arbitrary field point

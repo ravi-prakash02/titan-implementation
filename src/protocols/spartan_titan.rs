@@ -2,7 +2,7 @@ use std::time::Instant;
 use ark_crypto_primitives::sponge::Absorb;
 use ff::{Field, PrimeField};
 use merlin::Transcript;
-use crate::group_whir_committer::GroupWhirCommitment;
+use crate::group_whir_committer::{GroupWhirCommitment, GroupWhirPublicCommitment};
 use crate::merkle_tree::{Sha256Digest, Sha256MerkleTreeParams};
 use crate::multilinear::MultilinearPoly;
 use crate::protocols::field_sumcheck;
@@ -63,6 +63,7 @@ pub struct SpartanProof {
 
     // --- Commitment roots ---
     pub comm_pqm_root: Sha256Digest,
+    pub comm_pqm_ood_eval: G, // out-of-domain evaluation of the aggregate commitment (Sec. 5.4)
     pub comm_g_root: Sha256Digest,
     pub comm_z_root: Sha256Digest,
 
@@ -102,6 +103,7 @@ impl SpartanProof {
         proof_size += 10;
         proof_size += self.sumcheck_proof_4.get_proof_size();
         proof_size += 2;
+        proof_size += 1; // comm_pqm_ood_eval
         proof_size += self.agg_pqm_proof.eval_proof.get_proof_size()/32; // to offset multiplication by 32 inside get_proof_size
         proof_size += self.batch_zg_proof.get_prooof_size();
         proof_size += self.batch_index_proof.get_honest_oracle_proof_size();
@@ -609,6 +611,7 @@ impl TitanSnark {
             eC_at_ry,
             z_at_ry,
             comm_pqm_root: comm_pqm.root.clone(),
+            comm_pqm_ood_eval: comm_pqm.ood_eval,
             comm_g_root: comm_g.root.clone(),
             comm_z_root: comm_z.root.clone(),
             sumcheck_proof_3,
@@ -881,7 +884,7 @@ impl TitanSnark {
         // 1. Verify aggregate proof for p, q, m_r, m_c at r_3
         let res = TitanPolyCommitment::<G, F>::aggregate_verify(
             verifier_params_agg,
-            &proof.comm_pqm_root,
+            &GroupWhirPublicCommitment { root: proof.comm_pqm_root.clone(), ood_eval: proof.comm_pqm_ood_eval },
             r_3,
             num_vars_idx + 2,
             4,

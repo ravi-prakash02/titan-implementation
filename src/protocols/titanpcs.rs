@@ -1,5 +1,5 @@
 use crate::group_whir_committer::{
-    GroupWhirCommitment, GroupWhirProverMerkleState, GroupWhirVerifierMerkleState,
+    GroupWhirCommitment, GroupWhirProverMerkleState, GroupWhirPublicCommitment, GroupWhirVerifierMerkleState,
     MerkleProofStrategy,
 };
 use crate::merkle_tree::{Sha256Compress, Sha256LeafHash, Sha256MerkleTreeParams};
@@ -174,8 +174,8 @@ where
     F: ff::Field + ByteSerializable + Linear<F> + InnerProduct<F, Output = F>,
 {
     type CommitmentWithOpen = GroupWhirCommitment<Sha256MerkleTreeParams<G>, G>;
-    type Commitment =
-        <Sha256MerkleTreeParams<G> as ark_crypto_primitives::merkle_tree::Config>::InnerDigest;
+    // Merkle root plus out-of-domain evaluation y_0 (Sec. 5.4)
+    type Commitment = GroupWhirPublicCommitment<Sha256MerkleTreeParams<G>, G>;
     type ProverParams = TitanProverParams<G, F>;
     type VerifierParams = TitanVerifierParams<G, F>;
     type EvalProof = TitanEvalProof<G, F>;
@@ -253,6 +253,7 @@ where
             commitment: comm_with_open.root().clone(),
             alpha: alpha_y.clone(),
             sigma: sigma_partial,
+            ood_eval: comm_with_open.ood_eval,
             num_queries: prover_params.pp.num_queries,
         };
 
@@ -315,9 +316,10 @@ where
             m: m1,
             l: l1,
             domain_g: pp_v.pp.domain_g1.clone(),
-            commitment: comm.clone(),
+            commitment: comm.root.clone(),
             alpha: alpha_y.clone(),
             sigma: proof.comm_partial,
+            ood_eval: comm.ood_eval,
             num_queries: pp_v.pp.num_queries,
         };
         println!("Time to create instance {}", start.elapsed().as_millis());
@@ -329,7 +331,10 @@ where
             &mut transcript,
             &pp_v.state,
         );
-        assert!(is_valid);
+        if !is_valid {
+            println!("Group sum-check verification failed");
+            return false;
+        }
         let merkle_nodes = proof.partial_eval_proof.merkle_transmitted_nodes();
         println!(
             "Group sumcheck verification took {} msec, merkle proof transmitted nodes = {}",
@@ -350,7 +355,6 @@ where
         let start = Instant::now();
         let is_valid =
             ProtoBulletProofGroup::verify(&proof.bullet_proof, &bp_instance, &mut transcript);
-        assert!(is_valid);
         println!("Bulletproof verification took {} msec", start.elapsed().as_millis());
 
         is_valid
@@ -708,14 +712,16 @@ where
     /// evaluate correctly at a shared point alpha.
     pub fn batch_verify(
         pp_v: &<TitanPolyCommitment<G, F> as PolyCommitment<G, F>>::VerifierParams,
-        comms: &[<TitanPolyCommitment<G, F> as PolyCommitment<G, F>>::Commitment],
+        // Merkle roots only: the k-oracle batch path does not yet carry OOD samples
+        comms: &[<Sha256MerkleTreeParams<G> as ark_crypto_primitives::merkle_tree::Config>::InnerDigest],
         alpha: &[F],
         sigmas: &[F],
         proof: &TitanBatchEvalProof<G, F>,
     ) -> bool {
         let k = comms.len();
-        assert_eq!(k, sigmas.len());
-        assert_eq!(k, proof.comm_partials.len());
+        if k != sigmas.len() || k != proof.comm_partials.len() {
+            return false;
+        }
         let m1 = pp_v.pp.m1;
         let l1 = pp_v.pp.l1;
         let m2 = pp_v.pp.m - m1;
@@ -739,7 +745,10 @@ where
             &mut transcript,
             &pp_v.state,
         );
-        assert!(is_valid);
+        if !is_valid {
+            println!("Batch group sum-check verification failed");
+            return false;
+        }
 
         // One bulletproof verification on batched claim
         let mut sigma_partial_batched = G::zero();
@@ -760,7 +769,6 @@ where
 
         let is_valid =
             ProtoBulletProofGroup::verify(&proof.bullet_proof, &bp_instance, &mut transcript);
-        assert!(is_valid);
 
         is_valid
     }
@@ -863,7 +871,7 @@ fn run_titan_once(m: usize) -> (u128, u128, u128, usize) {
     //println!("Time to generate proof = {} msec", start.elapsed().as_millis());
 
     let start = Instant::now();
-    let _res = TitanPolyCommitment::verify(&titan_pp.1, &comm.root, &alpha, sigma, &proof);
+    let _res = TitanPolyCommitment::verify(&titan_pp.1, &comm.public(), &alpha, sigma, &proof);
     let verify_ms = start.elapsed().as_millis();
     //println!("Time to verify proof = {} msec", start.elapsed().as_millis());
 
@@ -942,7 +950,7 @@ mod tests {
         );
 
         let start = Instant::now();
-        let _res = TitanPolyCommitment::verify(&titan_pp.1, &comm.root, &alpha, sigma, &proof);
+        let _res = TitanPolyCommitment::verify(&titan_pp.1, &comm.public(), &alpha, sigma, &proof);
         println!(
             "Time to verify proof = {} msec",
             start.elapsed().as_millis()
@@ -1011,7 +1019,7 @@ mod tests {
         let start = Instant::now();
         let res = TitanPolyCommitment::<PallasG, PallasF>::aggregate_verify(
             &titan_pp.1,
-            &agg_comm.root,
+            &agg_comm.public(),
             &point,
             m+2,
             4,
