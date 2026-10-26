@@ -107,7 +107,7 @@ sudo apt install python3
 Then generate the plots:
 
 ```bash
-python3 src/benchmarking/titan_plot.py
+python3 src/benchmarking/titan_plots.py
 ```
 
 ---
